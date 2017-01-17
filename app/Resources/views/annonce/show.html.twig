@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Annonce</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ annonce.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ annonce.titre }}</td>
+            </tr>
+            <tr>
+                <th>Img</th>
+                <td>{{ annonce.img }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ annonce.description }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ annonce.prix }}</td>
+            </tr>
+            <tr>
+                <th>Vendeur</th>
+                <td>{{ annonce.vendeur }}</td>
+            </tr>
+            <tr>
+                <th>Dateparution</th>
+                <td>{{ annonce.dateparution }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ annonce.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ annonce.categorie }}</td>
+            </tr>
+            <tr>
+                <th>Localite</th>
+                <td>{{ annonce.localite }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('index') }}">Retour à la liste</a>
+        </li>
+        <li>
+            <a href="{{ path('edit', { 'id': annonce.id }) }}">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

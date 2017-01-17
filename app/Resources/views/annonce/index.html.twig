@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste d'annonces</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Img</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Vendeur</th>
+                <th>Dateparution</th>
+                <th>Telephone</th>
+                <th>Categorie</th>
+                <th>Localite</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for annonce in annonces %}
+            <tr>
+                <td><a href="{{ path('show', { 'id': annonce.id }) }}">{{ annonce.id }}</a></td>
+                <td>{{ annonce.titre }}</td>
+                <td>{{ annonce.img }}</td>
+                <td>{{ annonce.description }}</td>
+                <td>{{ annonce.prix }}</td>
+                <td>{{ annonce.vendeur }}</td>
+                <td>{{ annonce.dateparution }}</td>
+                <td>{{ annonce.telephone }}</td>
+                <td>{{ annonce.categorie }}</td>
+                <td>{{ annonce.localite }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('show', { 'id': annonce.id }) }}">Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('edit', { 'id': annonce.id }) }}">Modifier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('new') }}">Créer une nouvelle annonce</a>
+        </li>
+    </ul>
+{% endblock %}
