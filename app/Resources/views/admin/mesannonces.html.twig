@@ -1,12 +1,18 @@
 {% extends 'base.html.twig' %}
-
+{% block nav %}
+            <nav>
+                <ul>
+                    <li><a href="{{ path('accueil') }}">Accueil</a></li>
+                    </ul>
+            </nav>
+            {% endblock %}
 {% block body %}
     <h1>Liste d'annonces</h1>
 
     <table>
         <thead>
             <tr>
-                <th>Id</th>
+                
                 <th>Titre</th>
                 <th>Img</th>
                 <th>Description</th>
@@ -22,7 +28,7 @@
         <tbody>
         {% for annonce in annonces %}
             <tr>
-                <td><a href="{{ path('show', { 'id': annonce.id }) }}">{{ annonce.id }}</a></td>
+                
                 <td>{{ annonce.titre }}</td>
                 <td>{{ annonce.img }}</td>
                 <td>{{ annonce.description }}</td>

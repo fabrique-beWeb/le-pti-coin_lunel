@@ -11,17 +11,26 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Annonce controller.
  *
- * @Route("annonce")
+ * @Route("admin")
  */
 class AnnonceController extends Controller
 {
     /**
+     * @Route("/", name="accueil")
+     */
+    public function getAccueil()
+    {
+        return $this->render('base.html.twig');
+                
+    }
+    
+    /**
      * Lists all annonce entities.
      *
-     * @Route("/", name="index")
+     * @Route("/mesannonces", name="mesannonces")
      * @Method("GET")
      */
-    public function indexAction()
+    public function getMesannonces() 
     {
         $em = $this->getDoctrine()->getManager();
         /* J'initialise ma variable Entity Manager */
@@ -29,7 +38,7 @@ class AnnonceController extends Controller
         $annonces = $em->getRepository('AdminBundle:Annonce')->findAll();
         /* L'entity manager va récuperer toutes les annonces dans le repository annonce */
 
-        return $this->render('annonce/index.html.twig', array(
+        return $this->render('admin/mesannonces.html.twig', array(
             'annonces' => $annonces,
         /* Les annonces sont stockées dans un tableau et affichées dans index.html.twig */ 
         ));
@@ -64,7 +73,7 @@ class AnnonceController extends Controller
             /* Je me redirige sur la page de mon annonce nouvellement créée grace à l'id */
         }
 
-        return $this->render('annonce/new.html.twig', array(
+        return $this->render('admin/new.html.twig', array(
             /* si mon formulaire n'est pas valide (tous les champs pas remplis), message d'erreur */
             'annonce' => $annonce,
             'form' => $form->createView(),
@@ -82,7 +91,7 @@ class AnnonceController extends Controller
         $deleteForm = $this->createDeleteForm($annonce);
         /* crée un bouton delete */
 
-        return $this->render('annonce/show.html.twig', array(
+        return $this->render('admin/show.html.twig', array(
             'annonce' => $annonce,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -110,7 +119,7 @@ class AnnonceController extends Controller
             /* redirige sur la page d'edition */
         }
 
-        return $this->render('annonce/edit.html.twig', array(
+        return $this->render('admin/edit.html.twig', array(
             'annonce' => $annonce,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -136,7 +145,7 @@ class AnnonceController extends Controller
             /* vérifie que le formulaire est valide, appelle l'entity manager, supprime et envoie la suppression dans la database */
         }
 
-        return $this->redirectToRoute('index');
+        return $this->redirectToRoute('mesannonces');
     }
 
     /**
