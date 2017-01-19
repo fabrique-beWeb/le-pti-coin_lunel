@@ -3,9 +3,10 @@
 namespace AdminBundle\Controller;
 
 use AdminBundle\Entity\Annonce;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -20,7 +21,16 @@ class AnnonceController extends Controller
      */
     public function getAccueil()
     {
-        return $this->render('base.html.twig');
+        return $this->render('admin/accueil.html.twig');
+                
+    }
+    
+    /**
+     * @Route("/profil", name="profil")
+     */
+    public function getProfil()
+    {
+        return $this->render('admin/profil.html.twig');
                 
     }
     
@@ -153,7 +163,7 @@ class AnnonceController extends Controller
      *
      * @param Annonce $annonce The annonce entity
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @return Form The form
      */
     private function createDeleteForm(Annonce $annonce)
     {
@@ -163,4 +173,5 @@ class AnnonceController extends Controller
             ->getForm()
         ;
     }
+    
 }

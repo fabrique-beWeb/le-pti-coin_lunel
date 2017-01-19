@@ -1,7 +1,7 @@
-{% extends 'base.html.twig' %}
-
+{% extends 'admin/accueil.html.twig' %}
+{% block title %}Voir mon annonce{% endblock %}
 {% block body %}
-    <h1>Annonce</h1>
+    <h1>Voir mon annonce</h1>
 
     <table>
         <tbody>
@@ -30,7 +30,7 @@
                 <td>{{ annonce.vendeur }}</td>
             </tr>
             <tr>
-                <th>Dateparution</th>
+                <th>Date de parution</th>
                 <td>{{ annonce.dateparution }}</td>
             </tr>
             <tr>
