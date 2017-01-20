@@ -48,7 +48,7 @@ class DemandeController extends Controller
             $em->persist($demande);
             $em->flush($demande);
 
-            return $this->redirectToRoute('demande_show', array('id' => $demande->getId()));
+            return $this->redirectToRoute('showdemande', array('id' => $demande->getId()));
         }
 
         return $this->render('demande/newdemande.html.twig', array(
@@ -88,7 +88,7 @@ class DemandeController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('demande_edit', array('id' => $demande->getId()));
+            return $this->redirectToRoute('editdemande', array('id' => $demande->getId()));
         }
 
         return $this->render('demande/editdemande.html.twig', array(
@@ -115,7 +115,7 @@ class DemandeController extends Controller
             $em->flush($demande);
         }
 
-        return $this->redirectToRoute('demande_index');
+        return $this->redirectToRoute('listedemande');
     }
 
     /**

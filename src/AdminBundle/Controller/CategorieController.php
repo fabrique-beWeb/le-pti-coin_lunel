@@ -48,7 +48,7 @@ class CategorieController extends Controller
             $em->persist($categorie);
             $em->flush($categorie);
 
-            return $this->redirectToRoute('categorie_show', array('id' => $categorie->getId()));
+            return $this->redirectToRoute('showcategorie', array('id' => $categorie->getId()));
         }
 
         return $this->render('categorie/newcategorie.html.twig', array(
@@ -88,7 +88,7 @@ class CategorieController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('categorie_edit', array('id' => $categorie->getId()));
+            return $this->redirectToRoute('editcategorie', array('id' => $categorie->getId()));
         }
 
         return $this->render('categorie/editcategorie.html.twig', array(
@@ -115,7 +115,7 @@ class CategorieController extends Controller
             $em->flush($categorie);
         }
 
-        return $this->redirectToRoute('categorie_index');
+        return $this->redirectToRoute('listecategorie');
     }
 
     /**
