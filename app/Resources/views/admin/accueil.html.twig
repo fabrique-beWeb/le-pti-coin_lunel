@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Administration{% endblock %}</title>
+        {% block stylesheets %}<link href="{{ asset('/css/style.css') }}" rel="stylesheet" />
+        <link href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.css') }}" rel="stylesheet" />{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block nav %}
+            <nav class="navbar">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Le Pti Coin</a>
+                  </div>
+                  <div>
+                    <ul class="nav navbar-nav">
+                      <li><a href="{{ path('accueil') }}">Accueil</a></li>
+                      <li><a href="{{ path('mesannonces') }}">Voir mes annonces</a></li>
+                      <li><a href="{{ path('new') }}">Déposer une annonce</a></li> 
+                      <li><a href="{{ path('profil') }}">Mon profil</a></li>
+                    </ul>
+                  </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+              </nav>
+            {% endblock %}
+        {% block body %}
+        page accueil{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
+
