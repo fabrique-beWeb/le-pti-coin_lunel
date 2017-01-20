@@ -4,10 +4,9 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 19 janv. 2017, 14:00:16
+    Created on : 20 janv. 2017, 11:43:14
     Author     : paul-maillard
 */
 
-body {
-    background-color: black;
-}
+@import 'navbar/navbar';
+@import 'listeAnnonces/listeAnnonces';
