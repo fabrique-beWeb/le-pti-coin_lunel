@@ -1,3 +1,13 @@
-app:
-    resource: "@AppBundle/Controller/"
+admin_annonce:
+    resource: "@AdminBundle/Controller/AnnonceController.php"
     type:     annotation
+
+client:
+    resource: "@ClientBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+admin:
+    resource: "@AdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
