@@ -43,23 +43,19 @@
                 <td>{{ annonce.categorie }}</td>
                 <td>{{ annonce.localite }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('show', { 'id': annonce.id }) }}">Afficher</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('edit', { 'id': annonce.id }) }}">Modifier</a>
-                        </li>
-                    </ul>
+                    <button type="button" class="btn btn-default">
+                    <a href="{{ path('show', { 'id': annonce.id }) }}">Afficher</a></button>
+                    <button type="button" class="btn btn-default">
+                    <a href="{{ path('edit', { 'id': annonce.id }) }}">Modifier</a></button>
+                        
+                    
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('new') }}">Créer une nouvelle annonce</a>
-        </li>
-    </ul>
+    <button type="button" class="btn btn-default">
+    <a href="{{ path('new') }}">Créer une nouvelle annonce</a></button>
+        
+    
 {% endblock %}
