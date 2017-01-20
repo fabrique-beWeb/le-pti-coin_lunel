@@ -1,5 +1,8 @@
 admin_demande:
     resource: "@AdminBundle/Controller/DemandeController.php"
+    
+admin_annonce:
+    resource: "@AdminBundle/Controller/AnnonceController.php"
     type:     annotation
 
 admin_categorie:
