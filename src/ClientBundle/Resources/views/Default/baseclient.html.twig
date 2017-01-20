@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Bienvenue sur le petit coin{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+    
+    <h1>Bienvenue sur le petit coin</h1>
+    
+
+    {% block nav %}
+    <nav>
+        <ul>
+            <li><a href="{{ path('client') }}">Accueil client</a></li>
+            <li><a href="{{ path('new') }}">Déposer une annonce</a></li>
+            <li><a href="#">Se connecter</a></li>
+        </ul>
+    </nav>
+{% endblock %}
+
+    {% block body %}
+    {% endblock %}
+    
+    
+{% block javascripts %}{% endblock %}
+</body>
+</html>

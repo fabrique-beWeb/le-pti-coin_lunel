@@ -21,7 +21,7 @@ class AnnonceController extends Controller
      */
     public function getAccueil()
     {
-        return $this->render('admin/accueil.html.twig');
+        return $this->render('accueil.html.twig');
                 
     }
     
@@ -83,7 +83,7 @@ class AnnonceController extends Controller
             /* Je me redirige sur la page de mon annonce nouvellement créée grace à l'id */
         }
 
-        return $this->render('admin/new.html.twig', array(
+        return $this->render('admin/newannonce.html.twig', array(
             /* si mon formulaire n'est pas valide (tous les champs pas remplis), message d'erreur */
             'annonce' => $annonce,
             'form' => $form->createView(),
@@ -101,7 +101,7 @@ class AnnonceController extends Controller
         $deleteForm = $this->createDeleteForm($annonce);
         /* crée un bouton delete */
 
-        return $this->render('admin/show.html.twig', array(
+        return $this->render('admin/showannonce.html.twig', array(
             'annonce' => $annonce,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -129,7 +129,7 @@ class AnnonceController extends Controller
             /* redirige sur la page d'edition */
         }
 
-        return $this->render('admin/edit.html.twig', array(
+        return $this->render('admin/editannonce.html.twig', array(
             'annonce' => $annonce,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

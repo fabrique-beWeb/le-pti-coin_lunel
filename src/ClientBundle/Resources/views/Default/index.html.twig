@@ -1,1 +1,38 @@
-yoooooooooooooooooo
+{% extends 'ClientBundle:Default:baseclient.html.twig' %}
+
+{% block body %}
+    <h2>Liste d'annonces</h2>
+
+    <table>
+        <thead>
+            <tr>
+
+                <th>Titre</th>
+                <th>Img</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Vendeur</th>
+                <th>Dateparution</th>
+                <th>Telephone</th>
+                <th>Categorie</th>
+                <th>Localite</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for annonce in annonces %}
+                <tr>
+
+                    <td>{{ annonce.titre }}</td>
+                    <td>{{ annonce.img }}</td>
+                    <td>{{ annonce.description }}</td>
+                    <td>{{ annonce.prix }}</td>
+                    <td>{{ annonce.vendeur }}</td>
+                    <td>{{ annonce.dateparution }}</td>
+                    <td>{{ annonce.telephone }}</td>
+                    <td>{{ annonce.categorie }}</td>
+                    <td>{{ annonce.localite }}</td>
+
+                {% endfor %}
+            {% endblock %}
+

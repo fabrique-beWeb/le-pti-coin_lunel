@@ -1,4 +1,4 @@
-{% extends 'admin/accueil.html.twig' %}
+{% extends 'accueil.html.twig' %}
 
 {% block title %}Modifier une annonce{% endblock %}
 {% block nav %}
@@ -7,6 +7,7 @@
                     <li><a href="{{ path('accueil') }}">Accueil</a></li>
                     <li><a href="{{ path('mesannonces') }}">Voir mes annonces</a></li>
                     <li><a href="{{ path('new') }}">Déposer une annonce</a></li>
+                    <li><a href="{{ path('listecategorie') }}">Liste des catégories</a></li>
                     <li><a href="{{ path('profil') }}">Mon profil</a></li>
                     </ul>
             </nav>
