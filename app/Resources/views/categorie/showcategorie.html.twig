@@ -1,0 +1,29 @@
+{% extends 'accueil.html.twig' %}
+
+{% block body %}
+    <h1>Catégorie</h1>
+
+    <table>
+        <tbody>
+            
+            <tr>
+                <th>Nom</th>
+                <td>{{ categorie.nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('listecategorie') }}">Retour à la liste</a>
+        </li>
+        <li>
+            <a href="{{ path('editcategorie', { 'id': categorie.id }) }}">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

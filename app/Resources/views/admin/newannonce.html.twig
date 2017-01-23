@@ -1,0 +1,18 @@
+{% extends 'accueil.html.twig' %}
+
+{% block title %}Créer une annonce{% endblock %}
+
+{% block body %}
+    <h1>Créer une annonce</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Créer" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('mesannonces') }}">Retour à la liste</a>
+        </li>
+    </ul>
+{% endblock %}

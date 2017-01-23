@@ -1,0 +1,56 @@
+{% extends 'accueil.html.twig' %}
+
+{% block body %}
+    <h1>Demande</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ demande.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ demande.titre }}</td>
+            </tr>
+            <tr>
+                <th>Img</th>
+                <td>{{ demande.img }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ demande.description }}</td>
+            </tr>
+            <tr>
+                <th>Estimation</th>
+                <td>{{ demande.estimation }}</td>
+            </tr>
+            <tr>
+                <th>Demandeur</th>
+                <td>{{ demande.demandeur }}</td>
+            </tr>
+            <tr>
+                <th>Dateparution</th>
+                <td>{{ demande.dateparution }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ demande.telephone }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('listedemande') }}">Retour à la liste</a>
+        </li>
+        <li>
+            <a href="{{ path('editdemande', { 'id': demande.id }) }}">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

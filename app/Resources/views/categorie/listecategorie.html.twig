@@ -1,0 +1,38 @@
+{% extends 'accueil.html.twig' %}
+
+{% block body %}
+    <h1>Liste des catégories</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorie in categories %}
+            <tr>
+                <td><a href="{{ path('showcategorie', { 'id': categorie.id }) }}">{{ categorie.id }}</a></td>
+                <td>{{ categorie.nom }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('showcategorie', { 'id': categorie.id }) }}">Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('editcategorie', { 'id': categorie.id }) }}">Modifier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('newcategorie') }}">Create a new categorie</a>
+        </li>
+    </ul>
+{% endblock %}

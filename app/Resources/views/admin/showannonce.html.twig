@@ -1,4 +1,4 @@
-{% extends 'admin/accueil.html.twig' %}
+{% extends 'accueil.html.twig' %}
 {% block title %}Voir mon annonce{% endblock %}
 {% block body %}
     <h1>Voir mon annonce</h1>
@@ -47,13 +47,18 @@
             </tr>
         </tbody>
     </table>
-            <a href="{{ path('mesannonces') }}">
-            <button type="button" class="btn btn-default">Retour à la liste</button></a>
-            <a href="{{ path('edit', { 'id': annonce.id }) }}">
-            <button type="button" class="btn btn-default">Modifier</button></a>    
+
+    <ul>
+        <li>
+            <a href="{{ path('mesannonces') }}">Retour à la liste</a>
+        </li>
+        <li>
+            <a href="{{ path('edit', { 'id': annonce.id }) }}">Modifier</a>
+        </li>
+        <li>
             {{ form_start(delete_form) }}
-                <input type="submit" class="btn btn-default" value="Supprimer">
+                <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
-        
-    
+        </li>
+    </ul>
 {% endblock %}

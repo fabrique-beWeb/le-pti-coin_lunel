@@ -1,0 +1,51 @@
+{% extends 'accueil.html.twig' %}
+
+{% block title %}Liste des demandes{% endblock %}
+
+{% block body %}
+    <h1>Liste des demandes</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Img</th>
+                <th>Description</th>
+                <th>Estimation</th>
+                <th>Demandeur</th>
+                <th>Dateparution</th>
+                <th>Telephone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for demande in demandes %}
+            <tr>
+                <td>{{ demande.titre }}</td>
+                <td>{{ demande.img }}</td>
+                <td>{{ demande.description }}</td>
+                <td>{{ demande.estimation }}</td>
+                <td>{{ demande.demandeur }}</td>
+                <td>{{ demande.dateparution }}</td>
+                <td>{{ demande.telephone }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('showdemande', { 'id': demande.id }) }}">Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('editdemande', { 'id': demande.id }) }}">Modifier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('newdemande') }}">Créer une nouvelle demande</a>
+        </li>
+    </ul>
+{% endblock %}
