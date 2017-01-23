@@ -34,10 +34,12 @@
                 <td>{{ annonce.categorie }}</td>
                 <td>{{ annonce.localite }}</td>
                 <td>
-                    <button type="button" class="btn btn-default">
-                    <a href="{{ path('show', { 'id': annonce.id }) }}">Afficher</a></button>
-                    <button type="button" class="btn btn-default">
-                    <a href="{{ path('edit', { 'id': annonce.id }) }}">Modifier</a></button>
+                    
+                    <a href="{{ path('show', { 'id': annonce.id }) }}">
+                        <button type="button" class="btn btn-default">Afficher</button></a>
+                    
+                    <a href="{{ path('edit', { 'id': annonce.id }) }}">
+                        <button type="button" class="btn btn-default">Modifier</button></a>
                         
                     
                 </td>
@@ -45,8 +47,9 @@
         {% endfor %}
         </tbody>
     </table>
-    <button type="button" class="btn btn-default">
-    <a href="{{ path('new') }}">Créer une nouvelle annonce</a></button>
+   
+    <a href="{{ path('new') }}">
+        <button type="button" class="btn btn-default">Créer une nouvelle annonce</button></a>
         
     
 {% endblock %}

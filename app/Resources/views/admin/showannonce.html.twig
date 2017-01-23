@@ -47,13 +47,9 @@
             </tr>
         </tbody>
     </table>
-
-    <ul>
         <li>
-            <a href="{{ path('mesannonces') }}">Retour à la liste</a>
-        </li>
-        <li>
-            <a href="{{ path('edit', { 'id': annonce.id }) }}">Modifier</a>
+            <a href="{{ path('edit', { 'id': annonce.id }) }}">
+                <button type="button" class="btn btn-default">Modifier</button></a>
         </li>
         <li>
             {{ form_start(delete_form) }}
@@ -61,4 +57,6 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+            <a href="{{ path('mesannonces') }}">
+                <button type="button" class="btn btn-default">Retour à la liste</button></a>
 {% endblock %}

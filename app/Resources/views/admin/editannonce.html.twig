@@ -10,11 +10,10 @@
         <input type="submit" value="Modifier" />
     {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('mesannonces') }}">Retour à la liste</a>
-        </li>
-        <li>
+    <a href="{{ path('mesannonces') }}">
+        <button type="button" class="btn btn-default">Retour à la liste</button></a>
+    
+
             {{ form_start(delete_form) }}
                 <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}

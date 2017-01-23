@@ -40,17 +40,14 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('listedemande') }}">Retour à la liste</a>
-        </li>
-        <li>
-            <a href="{{ path('editdemande', { 'id': demande.id }) }}">Modifier</a>
-        </li>
-        <li>
+            <a href="{{ path('listedemande') }}">
+                <button type="button" class="btn btn-default">Retour à la liste</button></a>
+ 
+            <a href="{{ path('editdemande', { 'id': demande.id }) }}">
+                <button type="button" class="btn btn-default">Modifer</button></a>
+    
             {{ form_start(delete_form) }}
                 <input type="submit" value="Delete">
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
+     
 {% endblock %}

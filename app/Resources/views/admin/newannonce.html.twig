@@ -8,11 +8,8 @@
     {{ form_start(form) }}
         {{ form_widget(form) }}
         <input type="submit" value="Créer" />
-    {{ form_end(form) }}
+        {{ form_end(form) }}
+            <a href="{{ path('mesannonces') }}">
+                <button type="button" class="btn btn-default">Retour à la liste</button></a>
 
-    <ul>
-        <li>
-            <a href="{{ path('mesannonces') }}">Retour à la liste</a>
-        </li>
-    </ul>
 {% endblock %}
