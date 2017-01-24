@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Administration{% endblock %}</title>
-        {% block stylesheets %}<link href="{{ asset('/css/style.css') }}" rel="stylesheet" />
-        <link href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.css') }}" rel="stylesheet" />{% endblock %}
+        {% block stylesheets %}
+        <link href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.css') }}" rel="stylesheet" />
+        <link href="{{ asset('/css/style.css') }}" rel="stylesheet" />{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
@@ -12,7 +13,7 @@
             <nav class="navbar">
                 <div class="container-fluid">
                   <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Le Pti Coin</a>
+                    <a class="navbar-brand" href="{{ path('client') }}">Le Pti Coin</a>
                   </div>
                   <div>
                     <ul class="nav navbar-nav">
