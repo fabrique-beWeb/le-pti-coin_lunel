@@ -3,9 +3,12 @@
 namespace AdminBundle\Controller;
 
 use AdminBundle\Entity\Demande;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use DateTime;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Form;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Demande controller.
@@ -24,7 +27,7 @@ class DemandeController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $demandes = $em->getRepository('AdminBundle:Demande')->findAll();
+        $demandes = $em->getRepository('AdminBundle:Demande')->findBy(array(), array('dateparution' => 'desc'), null, null);
 
         return $this->render('demande/listedemande.html.twig', array(
             'demandes' => $demandes,
@@ -45,6 +48,7 @@ class DemandeController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $demande->setDateparution(new DateTime()); //Règle la date sur la date actuelle
             $em->persist($demande);
             $em->flush($demande);
 
@@ -123,7 +127,7 @@ class DemandeController extends Controller
      *
      * @param Demande $demande The demande entity
      *
-     * @return \Symfony\Component\Form\Form The form
+     * @return Form The form
      */
     private function createDeleteForm(Demande $demande)
     {

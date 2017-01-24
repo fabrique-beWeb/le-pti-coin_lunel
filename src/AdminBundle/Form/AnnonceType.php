@@ -3,6 +3,7 @@
 namespace AdminBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,7 +14,7 @@ class AnnonceType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('titre')->add('img')->add('description')->add('prix')->add('vendeur')->add('telephone')->add('categorie')->add('localite')        ;
+        $builder->add('titre')->add('img')->add('description')->add('prix',MoneyType::class)->add('vendeur')->add('telephone')->add('categorie')->add('localite')        ;
     }
     
     /**

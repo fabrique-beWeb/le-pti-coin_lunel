@@ -9,7 +9,7 @@
             <tr>
                 
                 <th>Titre</th>
-                <th>Img</th>
+                <th>Image</th>
                 <th>Description</th>
                 <th>Prix</th>
                 <th>Vendeur</th>
@@ -29,7 +29,7 @@
                 <td>{{ annonce.titre }}</td>
                 <td><img class="image img-responsive" src ="../{{annonce.img}}"/></td>
                 <td>{{ annonce.description }}</td>
-                <td>{{ annonce.prix }}</td>
+                <td>{{ annonce.prix }} €</td>
                 <td>{{ annonce.vendeur }}</td>
                 <td>{{ annonce.dateparution|date("d/m/y") }}</td>
                 <td>{{annonce.dateparution|date("H:i")}}</td>

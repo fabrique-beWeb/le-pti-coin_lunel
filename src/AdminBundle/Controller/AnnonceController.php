@@ -46,14 +46,15 @@ class AnnonceController extends Controller
         $em = $this->getDoctrine()->getManager();
         /* J'initialise ma variable Entity Manager */
 
-        $annonces = $em->getRepository('AdminBundle:Annonce')->findAll();
-        /* L'entity manager va récuperer toutes les annonces dans le repository annonce */
+        $annonces = $em->getRepository('AdminBundle:Annonce')->findBy(array(), array('dateparution' => 'desc'), null, null);
+        /* L'entity manager va récuperer toutes les annonces dans le repository annonce et je les classe dans l'ordre du plus récent au plus ancien*/
 
         return $this->render('admin/mesannonces.html.twig', array(
             'annonces' => $annonces,
         /* Les annonces sont stockées dans un tableau et affichées dans index.html.twig */ 
         ));
     }
+  
 
     /**
      * Creates a new annonce entity.

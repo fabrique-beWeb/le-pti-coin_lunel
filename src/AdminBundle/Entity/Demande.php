@@ -56,11 +56,12 @@ class Demande
      */
     private $demandeur;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="dateparution", type="string", length=255)
+     /**
+     *@var datetime
+     * 
+     * @ORM\Column(name="dateparution", type="datetime")
      */
+    
     private $dateparution;
 
     /**

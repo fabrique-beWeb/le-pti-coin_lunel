@@ -1,9 +1,6 @@
 <?php
-
 namespace AdminBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Annonce
  *
@@ -20,14 +17,12 @@ class Annonce
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var string
      *
      * @ORM\Column(name="titre", type="string", length=255)
      */
     private $titre;
-
     /**
      * @var string
      *
@@ -35,28 +30,24 @@ class Annonce
      */
     
     private $img;
-
     /**
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=255)
      */
     private $description;
-
     /**
      * @var string
      *
      * @ORM\Column(name="prix", type="string", length=255)
      */
     private $prix;
-
     /**
      * @var string
      *
      * @ORM\Column(name="vendeur", type="string", length=255)
      */
     private $vendeur;
-
    /**
      *@var datetime
      * 
@@ -64,24 +55,20 @@ class Annonce
      */
     
     private $dateparution;
-
     /**
      * @var string
      *
      * @ORM\Column(name="telephone", type="string", length=255)
      */
     private $telephone;
-
     /**
      * @var string
      *
      * @ORM\ManyToOne(targetEntity="Categorie")
      * @ORM\JoinColumn(name="fk_categorie", referencedColumnName="id")
      */
-
     /* Ici on a lié les tables catégorie et localité à notre table annonce */
     private $categorie;
-
     /**
      * @var string
      *
@@ -90,8 +77,6 @@ class Annonce
      */
     
     private $localite;
-
-
     /**
      * Get id
      *
@@ -101,7 +86,6 @@ class Annonce
     {
         return $this->id;
     }
-
     /**
      * Set titre
      *
@@ -112,10 +96,8 @@ class Annonce
     public function setTitre($titre)
     {
         $this->titre = $titre;
-
         return $this;
     }
-
     /**
      * Get titre
      *
@@ -125,7 +107,6 @@ class Annonce
     {
         return $this->titre;
     }
-
     /**
      * Set img
      *
@@ -136,10 +117,8 @@ class Annonce
     public function setImg($img)
     {
         $this->img = $img;
-
         return $this;
     }
-
     /**
      * Get img
      *
@@ -149,7 +128,6 @@ class Annonce
     {
         return $this->img;
     }
-
     /**
      * Set description
      *
@@ -160,10 +138,8 @@ class Annonce
     public function setDescription($description)
     {
         $this->description = $description;
-
         return $this;
     }
-
     /**
      * Get description
      *
@@ -173,7 +149,6 @@ class Annonce
     {
         return $this->description;
     }
-
     /**
      * Set prix
      *
@@ -184,10 +159,8 @@ class Annonce
     public function setPrix($prix)
     {
         $this->prix = $prix;
-
         return $this;
     }
-
     /**
      * Get prix
      *
@@ -197,7 +170,6 @@ class Annonce
     {
         return $this->prix;
     }
-
     /**
      * Set vendeur
      *
@@ -208,10 +180,8 @@ class Annonce
     public function setVendeur($vendeur)
     {
         $this->vendeur = $vendeur;
-
         return $this;
     }
-
     /**
      * Get vendeur
      *
@@ -221,7 +191,6 @@ class Annonce
     {
         return $this->vendeur;
     }
-
     /**
      * Set dateparution
      *
@@ -232,10 +201,8 @@ class Annonce
     public function setDateparution($dateparution)
     {
         $this->dateparution = $dateparution;
-
         return $this;
     }
-
     /**
      * Get dateparution
      *
@@ -245,7 +212,6 @@ class Annonce
     {
         return $this->dateparution;
     }
-
     /**
      * Set telephone
      *
@@ -256,10 +222,8 @@ class Annonce
     public function setTelephone($telephone)
     {
         $this->telephone = $telephone;
-
         return $this;
     }
-
     /**
      * Get telephone
      *
@@ -269,7 +233,6 @@ class Annonce
     {
         return $this->telephone;
     }
-
     /**
      * Set categorie
      *
@@ -280,10 +243,8 @@ class Annonce
     public function setCategorie($categorie)
     {
         $this->categorie = $categorie;
-
         return $this;
     }
-
     /**
      * Get categorie
      *
@@ -293,7 +254,6 @@ class Annonce
     {
         return $this->categorie;
     }
-
     /**
      * Set localite
      *
@@ -304,10 +264,8 @@ class Annonce
     public function setLocalite($localite)
     {
         $this->localite = $localite;
-
         return $this;
     }
-
     /**
      * Get localite
      *
@@ -325,4 +283,3 @@ class Annonce
     }
     
 }
-

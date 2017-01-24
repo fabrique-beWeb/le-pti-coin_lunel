@@ -8,12 +8,12 @@
             <tr>
                 <th>Id</th>
                 <th>Titre</th>
-                <th>Img</th>
+                <th>Image</th>
                 <th>Description</th>
                 <th>Prix</th>
                 <th>Vendeur</th>
-                <th>Date de parution</th>
-                <th>Heure de parution</th>
+                <th>Date</th>
+                <th>Heure</th>
                 <th>Telephone</th>
                 <th>Categorie</th>
                 <th>Localite</th>
@@ -24,7 +24,7 @@
             <td>{{ annonce.titre }}</td>
             <td>{{ annonce.img }}</td>
             <td>{{ annonce.description }}</td>
-            <td>{{ annonce.prix }}</td>
+            <td>{{ annonce.prix }} €</td>
             <td>{{ annonce.vendeur }}</td>
             <td>{{ annonce.dateparution|date("d/m/y") }}</td>
             <td>{{annonce.dateparution|date("h:m")}}</td>

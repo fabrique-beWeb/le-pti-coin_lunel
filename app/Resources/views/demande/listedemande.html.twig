@@ -9,11 +9,12 @@
         <thead>
             <tr>
                 <th>Titre</th>
-                <th>Img</th>
+                <th>Image</th>
                 <th>Description</th>
                 <th>Estimation</th>
                 <th>Demandeur</th>
-                <th>Dateparution</th>
+                <th>Date</th>
+                <th>Heure</th>
                 <th>Telephone</th>
                 <th>Actions</th>
             </tr>
@@ -26,7 +27,8 @@
                 <td>{{ demande.description }}</td>
                 <td>{{ demande.estimation }}</td>
                 <td>{{ demande.demandeur }}</td>
-                <td>{{ demande.dateparution }}</td>
+                <td>{{ demande.dateparution|date("d/m/y") }}</td>
+                <td>{{ demande.dateparution|date("H:i")}}</td>
                 <td>{{ demande.telephone }}</td>
                 <td>
                 
