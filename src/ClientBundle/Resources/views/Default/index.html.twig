@@ -2,37 +2,37 @@
 
 {% block body %}
     <h2>Liste d'annonces</h2>
+        <div class="table-responsive">
+            <table class="table product-table"> 
+                <!--table head-->
+                <thead>
+                    <tr>
+                        <th>Img</th>
+                        <th>Titre</th>
+                        <th>Prix</th>
+                    </tr>
+                </thead>
+                <!--/table head-->
 
-    <table>
-        <thead>
-            <tr>
-
-                <th>Titre</th>
-                <th>Img</th>
-                <th>Description</th>
-                <th>Prix</th>
-                <th>Vendeur</th>
-                <th>Dateparution</th>
-                <th>Telephone</th>
-                <th>Categorie</th>
-                <th>Localite</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            {% for annonce in annonces %}
-                <tr>
-
-                    <td>{{ annonce.titre }}</td>
-                    <td>{{ annonce.img }}</td>
-                    <td>{{ annonce.description }}</td>
-                    <td>{{ annonce.prix }}</td>
-                    <td>{{ annonce.vendeur }}</td>
-                    <td>{{ annonce.dateparution }}</td>
-                    <td>{{ annonce.telephone }}</td>
-                    <td>{{ annonce.categorie }}</td>
-                    <td>{{ annonce.localite }}</td>
-
-                {% endfor %}
+                <!--table body-->
+                <tbody>
+                    {% for annonce in annonces %}
+                        <tr>
+                            <td><img src="http://familyonbikes.org/blog/wp-content/uploads/2013/10/rusty-bike.jpg" alt="" class="img-fluid"></td>
+                            <td>
+                                <h4><strong>{{ annonce.titre }}</strong></h4>
+                                <h5>{{ annonce.categorie }}</h5>
+                                </p>{{ annonce.localite }}</p>
+                            </td>
+                            <td>
+                                <h4><strong>{{ annonce.prix }}</strong></h4>
+                                {{ annonce.dateparution|date("d/m/y") }}
+                            </td> 
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <!--/table body-->
+            </table>
+        </div>
             {% endblock %}
 
