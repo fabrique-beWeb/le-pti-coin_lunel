@@ -1,0 +1,20 @@
+.table-visiteur{
+    border-collapse: separate;
+    border-spacing: 0px 20px;
+
+    tbody {
+        background-color: #c9f0d6;
+        
+        .imgcontainer {
+            position: relative;
+            overflow: hidden;
+            height: 160px;
+            width: 160px;
+            
+            img {
+                max-height: 200px;
+                max-width: 200px;
+            }
+        }
+    }
+}

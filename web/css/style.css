@@ -7,9 +7,6 @@ and open the template in the editor.
     Created on : 20 janv. 2017, 15:25:14
     Author     : paul-maillard
 */
-table, th, td {
-  border: 1px solid black; }
-
 .navbar {
   background-color: #ffca61; }
   .navbar .nav > li > a {
@@ -24,5 +21,18 @@ table, th, td {
 #ffec85
 #f2ffdf
 #c9f0d6*/
+.table-visiteur {
+  border-collapse: separate;
+  border-spacing: 0px 20px; }
+  .table-visiteur tbody {
+    background-color: #c9f0d6; }
+    .table-visiteur tbody .imgcontainer {
+      position: relative;
+      overflow: hidden;
+      height: 160px;
+      width: 160px; }
+      .table-visiteur tbody .imgcontainer img {
+        max-height: 200px;
+        max-width: 200px; }
 
 /*# sourceMappingURL=style.css.map */

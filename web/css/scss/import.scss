@@ -8,9 +8,10 @@ and open the template in the editor.
     Author     : paul-maillard
 */
 
-@import 'accueil/accueil';
-@import 'creerAnnonce/creerAnnonce';
-@import 'listeAnnonces/listeAnnonces';
-@import 'navbar/nav';
-@import 'profil/profil';
+@import 'accueil';
+@import 'creerAnnonce';
+@import 'listeAnnonces';
+@import 'nav';
+@import 'profil';
 @import 'variables'; 
+@import 'table';

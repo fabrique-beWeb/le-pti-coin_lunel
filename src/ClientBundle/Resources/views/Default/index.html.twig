@@ -3,14 +3,9 @@
 {% block body %}
     <h2>Liste d'annonces</h2>
         <div class="table-responsive">
-            <table class="table product-table"> 
+            <table class="table table-visiteur"> 
                 <!--table head-->
                 <thead>
-                    <tr>
-                        <th>Img</th>
-                        <th>Titre</th>
-                        <th>Prix</th>
-                    </tr>
                 </thead>
                 <!--/table head-->
 
@@ -18,7 +13,12 @@
                 <tbody>
                     {% for annonce in annonces %}
                         <tr>
-                            <td><img src="http://familyonbikes.org/blog/wp-content/uploads/2013/10/rusty-bike.jpg" alt="" class="img-fluid"></td>
+                            <td>
+                                <div class="imgcontainer">
+                                    <img src="http://familyonbikes.org/blog/wp-content/uploads/2013/10/rusty-bike.jpg" alt="" class="img-fluid">
+                                </div>
+                            </td>
+                                
                             <td>
                                 <h4><strong>{{ annonce.titre }}</strong></h4>
                                 <h5>{{ annonce.categorie }}</h5>
