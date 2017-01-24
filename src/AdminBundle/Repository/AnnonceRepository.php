@@ -9,5 +9,7 @@ namespace AdminBundle\Repository;
  * repository methods below.
  */
 class AnnonceRepository extends \Doctrine\ORM\EntityRepository
+
+
 {
 }

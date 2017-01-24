@@ -3,65 +3,58 @@
 {% block body %}
     <h1>Voir mon annonce</h1>
 
-    <table>
-        <tbody>
+    <table class="table">
+        <thead>
             <tr>
                 <th>Id</th>
-                <td>{{ annonce.id }}</td>
-            </tr>
-            <tr>
                 <th>Titre</th>
-                <td>{{ annonce.titre }}</td>
-            </tr>
-            <tr>
                 <th>Img</th>
-                <td>{{ annonce.img }}</td>
-            </tr>
-            <tr>
                 <th>Description</th>
-                <td>{{ annonce.description }}</td>
-            </tr>
-            <tr>
                 <th>Prix</th>
-                <td>{{ annonce.prix }}</td>
-            </tr>
-            <tr>
                 <th>Vendeur</th>
-                <td>{{ annonce.vendeur }}</td>
-            </tr>
-            <tr>
                 <th>Date de parution</th>
-                <td>{{ annonce.dateparution|date("d/m/y") }}</td>
-                
-            </tr>
-            <tr>
                 <th>Heure de parution</th>
-            <td>{{annonce.dateparution|date("h:m")}}</td>
-            </tr>
-            <tr>
                 <th>Telephone</th>
-                <td>{{ annonce.telephone }}</td>
-            </tr>
-            <tr>
                 <th>Categorie</th>
-                <td>{{ annonce.categorie }}</td>
-            </tr>
-            <tr>
                 <th>Localite</th>
-                <td>{{ annonce.localite }}</td>
             </tr>
-        </tbody>
+        </thead>
+        <tbody>
+            <td>{{ annonce.id }}</td>
+            <td>{{ annonce.titre }}</td>
+            <td>{{ annonce.img }}</td>
+            <td>{{ annonce.description }}</td>
+            <td>{{ annonce.prix }}</td>
+            <td>{{ annonce.vendeur }}</td>
+            <td>{{ annonce.dateparution|date("d/m/y") }}</td>
+            <td>{{annonce.dateparution|date("h:m")}}</td>
+            <td>{{ annonce.telephone }}</td>
+            <td>{{ annonce.categorie }}</td>
+            <td>{{ annonce.localite }}</td>
+            
+            <td>
+                
+            
+                    <a href="{{ path('edit', { 'id': annonce.id }) }}">
+                        <span class="glyphicon glyphicon-pencil"></span></a>
+                
+            </td>
+    
+    
+    
+    
+    </tbody>
     </table>
-        <li>
+        
             <a href="{{ path('edit', { 'id': annonce.id }) }}">
                 <button type="button" class="btn btn-default">Modifier</button></a>
-        </li>
-        <li>
+       
             {{ form_start(delete_form) }}
                 <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>
             <a href="{{ path('mesannonces') }}">
-                <button type="button" class="btn btn-default">Retour à la liste</button></a>
+                <button type="button" class="btn btn-default">Retour à la liste</button>
+                <span class="glyphicon glyphicon-repeat"></span></a>
 {% endblock %}

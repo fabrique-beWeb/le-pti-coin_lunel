@@ -13,19 +13,14 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
             <a href="{{ path('listecategorie') }}">
                 <button type="button" class="btn btn-default">Retour à la liste</button></a>
-        </li>
-        <li>
+      
             <a href="{{ path('editcategorie', { 'id': categorie.id }) }}">
                 <button type="button" class="btn btn-default">Modifier</button></a>
-        </li>
-        <li>
+        
             {{ form_start(delete_form) }}
                 <input type="submit" value="Delete">
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        
 {% endblock %}
