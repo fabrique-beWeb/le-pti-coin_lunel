@@ -3,6 +3,7 @@
 namespace AdminBundle\Controller;
 
 use AdminBundle\Entity\Annonce;
+use DateTime;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -72,6 +73,8 @@ class AnnonceController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             /* si mon formulaire est envoyé et qu'il est valide */
             $em = $this->getDoctrine()->getManager();
+            
+            $annonce->setDateparution(new DateTime()); //Règle la date sur la date actuelle
             /* J'initialise ma variable Entity Manager */
             $em->persist($annonce);
             /* J'enregistre mon formulaire */

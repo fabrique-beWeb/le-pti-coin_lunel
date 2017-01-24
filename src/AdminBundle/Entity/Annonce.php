@@ -33,6 +33,7 @@ class Annonce
      *
      * @ORM\Column(name="img", type="string", length=255)
      */
+    
     private $img;
 
     /**
@@ -56,11 +57,12 @@ class Annonce
      */
     private $vendeur;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="dateparution", type="string", length=255)
+   /**
+     *@var datetime
+     * 
+     * @ORM\Column(name="dateparution", type="datetime")
      */
+    
     private $dateparution;
 
     /**

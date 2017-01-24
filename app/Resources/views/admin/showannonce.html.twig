@@ -31,7 +31,12 @@
             </tr>
             <tr>
                 <th>Date de parution</th>
-                <td>{{ annonce.dateparution }}</td>
+                <td>{{ annonce.dateparution|date("d/m/y") }}</td>
+                
+            </tr>
+            <tr>
+                <th>Heure de parution</th>
+            <td>{{annonce.dateparution|date("h:m")}}</td>
             </tr>
             <tr>
                 <th>Telephone</th>
