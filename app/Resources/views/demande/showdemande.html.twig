@@ -1,7 +1,7 @@
 {% extends 'accueil.html.twig' %}
 
 {% block body %}
-    <h1>Demande</h1>
+    <h2>Demande</h2>
 
     <table>
         <tbody>
@@ -40,14 +40,14 @@
         </tbody>
     </table>
 
-            <a href="{{ path('listedemande') }}">
+            <a href="{{ path('mesdemandes') }}">
                 <button type="button" class="btn btn-default">Retour à la liste</button></a>
  
             <a href="{{ path('editdemande', { 'id': demande.id }) }}">
                 <button type="button" class="btn btn-default">Modifer</button></a>
     
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer" class="btn btn-default">
             {{ form_end(delete_form) }}
      
 {% endblock %}

@@ -7,7 +7,11 @@ h1 {
   text-align: center; }
 
 h2 {
-  background-color: #f56b2a; }
+  background-color: #ff9000;
+  color: white; }
+
+.btn-default {
+  background-color: #FEA226; }
 
 .table {
   margin-top: 35px;
@@ -56,7 +60,13 @@ th {
 
 .table-responsive .table-title {
   font-family: "Hammersmith+One", sans-serif;
-  padding-left: 10%; }
+  background-color: #ff9000;
+  color: #fff;
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  outline: solid 2px #ffca61;
+  margin-bottom: 10px; }
 .table-responsive .table-visiteur {
   border-collapse: separate;
   width: 80%;
@@ -76,22 +86,23 @@ th {
       text-align: right; }
     .table-responsive .table-visiteur tbody tr:not(.spacer) {
       outline: solid 2px #ffca61; }
-    .table-responsive .table-visiteur tbody .imgcontainer {
-      position: relative;
-      overflow: hidden;
-      height: 160px;
-      width: 160px; }
-      .table-responsive .table-visiteur tbody .imgcontainer img {
-        max-height: 160px;
-        max-width: 160px;
-        position: absolute;
-        top: -9999px;
-        bottom: -9999px;
-        left: -9999px;
-        right: -9999px;
-        margin: auto; }
   .table-responsive .table-visiteur .spacer {
     height: 10px; }
+
+.imgcontainer {
+  position: relative;
+  overflow: hidden;
+  height: 160px;
+  width: 160px; }
+  .imgcontainer img {
+    max-height: 160px;
+    max-width: 160px;
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto; }
 
 /*
 To change this license header, choose License Headers in Project Properties.
@@ -102,5 +113,22 @@ and open the template in the editor.
     Created on : 24 janv. 2017, 13:38:12
     Author     : marvin
 */
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27 janv. 2017, 14:38:33
+    Author     : marvin
+*/
+.table-categorie {
+  margin-top: 10px;
+  margin-right: 50px;
+  margin-left: 60px;
+  width: 35%; }
+
+#actcategorie {
+  padding-left: 50px; }
 
 /*# sourceMappingURL=style.css.map */

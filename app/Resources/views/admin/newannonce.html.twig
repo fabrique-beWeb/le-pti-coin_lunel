@@ -3,11 +3,11 @@
 {% block title %}Créer une annonce{% endblock %}
 
 {% block body %}
-    <h1>Créer une annonce</h1>
+    <h2>Créer une annonce</h2>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Créer" />
+        <input type="submit" value="Créer" class="btn btn-default" />
         {{ form_end(form) }}
             <a href="{{ path('mesannonces') }}">
                 <button type="button"  class="btn btn-default">Retour à la liste</button></a>

@@ -3,7 +3,7 @@
 {% block title %}Liste des demandes{% endblock %}
 
 {% block body %}
-    <h1>Liste des demandes</h1>
+    <h2>Liste des demandes</h2>
 
     <table>
         <thead>
@@ -23,7 +23,7 @@
         {% for demande in demandes %}
             <tr>
                 <td>{{ demande.titre }}</td>
-                <td>{{ demande.img }}</td>
+                <td><div class ="imgcontainer"><img class="image img-responsive" src ="{{asset('uploads/img/'~demande.img)}}" alt="{{demande.img}}"/></div></td>
                 <td>{{ demande.description }}</td>
                 <td>{{ demande.estimation }}</td>
                 <td>{{ demande.demandeur }}</td>
@@ -33,10 +33,13 @@
                 <td>
                 
                             <a href="{{ path('showdemande', { 'id': demande.id }) }}">
-                                <button type="button"  class="btn btn-default">Afficher</button></a>
+                               <span class="glyphicon glyphicon-list-alt afficher">
+                                <p id="aff">Afficher</p></span></a>
                         
                             <a href="{{ path('editdemande', { 'id': demande.id }) }}">
-                                <button type="button"  class="btn btn-default">Modifier</button></a>
+                                <span class="glyphicon glyphicon-wrench modifier">
+                        <p id="modi">Modifier</p></span></a>
+              </td>
                        
                 </td>
             </tr>
@@ -45,9 +48,7 @@
     </table>
 
             <a href="{{ path('newdemande') }}">
-                <button type="button"  class="btn btn-default">Créer une nouvelle demande</button></a>
-                
-
+                <button type="button" class="btn btn-default">Créer une nouvelle demande</button></a>
         </li>
     </ul>
 {% endblock %}

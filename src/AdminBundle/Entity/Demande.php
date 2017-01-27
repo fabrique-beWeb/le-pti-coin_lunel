@@ -1,8 +1,9 @@
 <?php
-
+    
 namespace AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\File;
 
 /**
  * Demande
@@ -32,6 +33,7 @@ class Demande
      * @var string
      *
      * @ORM\Column(name="img", type="string", length=255)
+     * @File(mimeTypes={"image/jpeg","image/png"})
      */
     private $img;
 

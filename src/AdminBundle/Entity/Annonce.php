@@ -1,6 +1,8 @@
 <?php
 namespace AdminBundle\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\File;
 /**
  * Annonce
  *
@@ -27,6 +29,7 @@ class Annonce
      * @var string
      *
      * @ORM\Column(name="img", type="string", length=255)
+     * @File(mimeTypes={"image/jpeg","image/png"})
      */
     
     private $img;
@@ -137,7 +140,7 @@ class Annonce
      */
     public function setDescription($description)
     {
-        $this->description = $description;
+        $this->description = nl2br($description);
         return $this;
     }
     /**

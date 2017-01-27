@@ -14,18 +14,18 @@
                         <tr>
                             <td class="left-col">
                                 <div class="imgcontainer">
-                                    <img src="http://familyonbikes.org/blog/wp-content/uploads/2013/10/rusty-bike.jpg" alt="" class="img-fluid">
+                                    <img class="image img-responsive" src="{{asset('uploads/img/'~annonce.img)}}" alt="{{annonce.img}}" />
                                 </div>
                             </td>
                                 
                             <td>
                                 <h3><strong>{{ annonce.titre }}</strong></h3>
                                 <h4>{{ annonce.categorie }}</h4>
-                                </p>{{ annonce.localite }}</p>
+                                <h5>{{ annonce.localite }}</h5>
                             </td>
                             <td class="right-col">
-                                <h3><strong>{{ annonce.prix }}</strong></h3>
-                                {{ annonce.dateparution|date("d/m/y") }}
+                                <h3><strong>{{ annonce.prix }} €</strong></h3>
+                                <h5>{{ annonce.dateparution|date("d/m/y") }}</h5>
                             </td> 
                         </tr>
                         <tr class="spacer"></tr>

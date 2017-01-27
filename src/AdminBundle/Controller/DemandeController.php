@@ -20,7 +20,7 @@ class DemandeController extends Controller
     /**
      * Lists all demande entities.
      *
-     * @Route("/", name="listedemande")
+     * @Route("/mesdemandes", name="mesdemandes")
      * @Method("GET")
      */
     public function indexAction()
@@ -29,7 +29,7 @@ class DemandeController extends Controller
 
         $demandes = $em->getRepository('AdminBundle:Demande')->findBy(array(), array('dateparution' => 'desc'), null, null);
 
-        return $this->render('demande/listedemande.html.twig', array(
+        return $this->render('demande/mesdemandes.html.twig', array(
             'demandes' => $demandes,
         ));
     }
@@ -47,6 +47,12 @@ class DemandeController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $nomDuFichier = md5(uniqid()) . "." . $demande->getImg()->getClientOriginalExtension();
+            /* Récupère le nom de l'image et le hash, avant d'ajouter l'extension de l'image après le hash */
+            $demande->getImg()->move('uploads/img', $nomDuFichier);
+            /* Je sauvegarde une copie de mon image hashée dans mon dossier web/uploads/img */
+            $demande->setImg($nomDuFichier);
+            /* J'add mon image hashée à ma nouvelle annonce */
             $em = $this->getDoctrine()->getManager();
             $demande->setDateparution(new DateTime()); //Règle la date sur la date actuelle
             $em->persist($demande);
@@ -119,7 +125,7 @@ class DemandeController extends Controller
             $em->flush($demande);
         }
 
-        return $this->redirectToRoute('listedemande');
+        return $this->redirectToRoute('mesdemandes');
     }
 
     /**
