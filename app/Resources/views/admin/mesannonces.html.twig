@@ -27,12 +27,12 @@
             <tr>
                 
                 <td>{{ annonce.titre }}</td>
-                <td><img class="image img-responsive" src ="../{{annonce.img}}"/></td>
+                <td><img class="image img-responsive" src ="{{asset('uploads/img/'~annonce.img)}}" alt="{{annonce.img}}"/></td>
                 <td>{{ annonce.description }}</td>
                 <td>{{ annonce.prix }} €</td>
                 <td>{{ annonce.vendeur }}</td>
                 <td>{{ annonce.dateparution|date("d/m/y") }}</td>
-                <td>{{annonce.dateparution|date("H:i")}}</td>
+                <td>{{ annonce.dateparution|date("H:i")}}</td>
                 <td>{{ annonce.telephone }}</td>
                 <td>{{ annonce.categorie }}</td>
                 <td>{{ annonce.localite }}</td>

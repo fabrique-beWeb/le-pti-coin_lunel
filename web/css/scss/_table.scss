@@ -2,11 +2,17 @@
     
     .table-title {
         font-family: $main-font;
-        padding-left: 10%;
+        background-color: #ff9000;
+        color: #fff;
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+        outline: solid 2px #ffca61;
+        margin-bottom: 10px;
     }
 
     .table-visiteur{
-        border-collapse: separate;
+        border-collapse: separate;  
         width: 80%;
         margin: auto;
 
@@ -17,8 +23,12 @@
         }
 
         h3 {
-        font-family: $main-font;
+            font-family: $main-font;
 
+        }
+        
+        h5 {
+            
         }
 
         tbody {
@@ -31,6 +41,7 @@
 
             .right-col{
                 text-align: right;
+                
             }
 
             tr:not(.spacer) {

@@ -20,7 +20,7 @@ class DemandeController extends Controller
     /**
      * Lists all demande entities.
      *
-     * @Route("/", name="listedemande")
+     * @Route("/mesdemandes", name="mesdemandes")
      * @Method("GET")
      */
     public function indexAction()
@@ -29,7 +29,7 @@ class DemandeController extends Controller
 
         $demandes = $em->getRepository('AdminBundle:Demande')->findBy(array(), array('dateparution' => 'desc'), null, null);
 
-        return $this->render('demande/listedemande.html.twig', array(
+        return $this->render('demande/mesdemandes.html.twig', array(
             'demandes' => $demandes,
         ));
     }
@@ -119,7 +119,7 @@ class DemandeController extends Controller
             $em->flush($demande);
         }
 
-        return $this->redirectToRoute('listedemande');
+        return $this->redirectToRoute('mesdemandes');
     }
 
     /**
