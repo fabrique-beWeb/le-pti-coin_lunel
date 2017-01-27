@@ -13,7 +13,7 @@
                 <th>Prix</th>
                 <th>Vendeur</th>
                 <th>Date</th>
-                <th>Heure</th>
+                <th>Heures</th>
                 <th>Telephone</th>
                 <th>Categorie</th>
                 <th>Localite</th>
@@ -33,27 +33,17 @@
             <td>{{ annonce.localite }}</td>
             
             <td>
-                
-            
-                    <a href="{{ path('edit', { 'id': annonce.id }) }}">
-                        <span class="glyphicon glyphicon-pencil"></span></a>
+                <a href="{{ path('edit', { 'id': annonce.id }) }}">
+                        <span class="glyphicon glyphicon-pencil modifier"></span>
+                        <p id="aff">Modifier</p></span></a>
                 
             </td>
-    
-    
-    
-    
     </tbody>
     </table>
-        
-            <a href="{{ path('edit', { 'id': annonce.id }) }}">
-                <button type="button" class="btn btn-default">Modifier</button></a>
-       
-            {{ form_start(delete_form) }}
+                {{ form_start(delete_form) }}
                 <input type="submit" value="Supprimer">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+                {{ form_end(delete_form) }}
+    
             <a href="{{ path('mesannonces') }}">
                 <button type="button" class="btn btn-default">Retour à la liste</button>
                 <span class="glyphicon glyphicon-repeat"></span></a>

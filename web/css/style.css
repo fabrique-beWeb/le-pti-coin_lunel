@@ -3,6 +3,47 @@
 #ffec85
 #f2ffdf
 #c9f0d6*/
+h1 {
+  text-align: center; }
+
+btn-default {
+  background-color: #ffec85; }
+
+.table {
+  margin-top: 35px;
+  margin-right: 25px;
+  margin-left: 45px;
+  width: 92%; }
+
+tbody {
+  background-color: #ffec85; }
+
+th {
+  background-color: #ffca61;
+  margin-bottom: 2px; }
+
+.modifier {
+  color: black;
+  text-align: center; }
+
+.afficher {
+  color: black;
+  text-align: center; }
+
+#aff {
+  padding-right: 15px;
+  padding-left: 15px; }
+
+#act {
+  text-align: center !important; }
+
+#modi {
+  padding-right: 15px;
+  padding-left: 15px; }
+
+#create {
+  background-color: red; }
+
 .navbar {
   background-color: #ffca61; }
   .navbar .nav > li > a {
@@ -15,7 +56,13 @@
 
 .table-responsive .table-title {
   font-family: "Hammersmith+One", sans-serif;
-  padding-left: 10%; }
+  background-color: #ff9000;
+  color: #fff;
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  outline: solid 2px #ffca61;
+  margin-bottom: 10px; }
 .table-responsive .table-visiteur {
   border-collapse: separate;
   width: 80%;
@@ -51,5 +98,15 @@
         margin: auto; }
   .table-responsive .table-visiteur .spacer {
     height: 10px; }
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24 janv. 2017, 13:38:12
+    Author     : marvin
+*/
 
 /*# sourceMappingURL=style.css.map */
