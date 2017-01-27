@@ -60,7 +60,7 @@ class CategorieController extends Controller
     /**
      * Finds and displays a categorie entity.
      *
-     * @Route("/{id}", name="showcategorie")
+     * @Route("/show/{id}", name="showcategorie")
      * @Method("GET")
      */
     public function showAction(Categorie $categorie)

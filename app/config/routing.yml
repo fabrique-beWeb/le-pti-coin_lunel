@@ -1,3 +1,8 @@
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 admin_demande:
     resource: "@AdminBundle/Controller/DemandeController.php"
     type:     annotation
@@ -19,3 +24,14 @@ admin:
     resource: "@AdminBundle/Controller/"
     type:     annotation
     prefix:   /
+    
+login:
+    path: /login
+    defaults:
+        _controller: UserBundle:Security:login
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout

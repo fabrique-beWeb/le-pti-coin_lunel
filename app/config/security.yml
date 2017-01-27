@@ -1,24 +1,44 @@
-# To get started with security, check out the documentation:
-# http://symfony.com/doc/current/security.html
 security:
+  encoders:
+    Symfony\Component\Security\Core\User\User: plaintext
 
-    # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
-    providers:
-        in_memory:
-            memory: ~
+  role_hierarchy:
+    ROLE_ADMIN:       ROLE_USER
+    ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
-    firewalls:
-        # disables authentication for assets and the profiler, adapt it according to your needs
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
+  providers:
+    in_memory:
+      memory:
+        users:
+          user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+          admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
 
-        main:
-            anonymous: ~
-            # activate different ways to authenticate
-
-            # http_basic: ~
-            # http://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-
-            # form_login: ~
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+    main:
+#        main est le nom du pare feu
+      pattern:   ^/
+#      pattern: ^/ est un masque d'URL. Cela signifie que toutes les URL commençant par
+#« / » (c'est-à-dire notre site tout entier) sont protégées par ce pare-feu
+      anonymous: true
+#anonymous: true accepte les utilisateurs anonymes. 
+#Nous protégerons nos ressources grâce aux rôles.
+      provider:     in_memory
+#provider: in_memory est le fournisseur d'utilisateurs pour ce pare-feu. 
+#un pare-feu a besoin de savoir où trouver ses utilisateurs, cela se fait par le biais 
+#de ce paramètre. in_memory correspond au nom du fournisseur défini dans la section 
+#providers
+      form_login:
+          login_path: login
+          check_path: login_check
+          
+      logout:
+        path:       logout
+        target:     /
+          
+  access_control:
+      - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/admin, roles: ROLE_ADMIN}
+#      On sécurise toutes les Url qui commencent par /admin.
