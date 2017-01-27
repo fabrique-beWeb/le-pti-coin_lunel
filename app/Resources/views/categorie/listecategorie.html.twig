@@ -1,29 +1,28 @@
 {% extends 'accueil.html.twig' %}
 
 {% block body %}
-    <h1>Liste des catégories</h1>
+    <h2>Liste des catégories</h2>
 
-    <table>
+    <table class="table table-categorie">
         <thead>
             <tr>
                 <th>Nom</th>
-                <th>Actions</th>
+                <th id="actcategorie" >Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for categorie in categories %}
             <tr>
-                <td>
-                    <a href="{{ path('showcategorie', { 'id': categorie.id }) }}">{{ categorie.id }}</a>
-                </td>
+                
                 <td>{{ categorie.nom }}</td>
+                
                 <td>
-                    
-                            <a href="{{ path('showcategorie', { 'id': categorie.id }) }}">
-                                <button type="button"  class="btn btn-default">Afficher</button></a>
-                            
-                            <a href="{{ path('editcategorie', { 'id': categorie.id }) }}">
-                                <button type="button"  class="btn btn-default">Modifier</button></a>
+                    <a href="{{ path('showcategorie', { 'id': categorie.id }) }}">
+                        <span class="glyphicon glyphicon-list-alt afficher">
+                        <p id="aff">Afficher</p></span></a>
+                    <a href="{{ path('editcategorie', { 'id': categorie.id }) }}">
+                        <span class="glyphicon glyphicon-wrench modifier">
+                        <p id="modi">Modifier</p></span></a>
               </td>
             </tr>
         {% endfor %}

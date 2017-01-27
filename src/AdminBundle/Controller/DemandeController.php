@@ -47,6 +47,12 @@ class DemandeController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $nomDuFichier = md5(uniqid()) . "." . $demande->getImg()->getClientOriginalExtension();
+            /* Récupère le nom de l'image et le hash, avant d'ajouter l'extension de l'image après le hash */
+            $demande->getImg()->move('uploads/img', $nomDuFichier);
+            /* Je sauvegarde une copie de mon image hashée dans mon dossier web/uploads/img */
+            $demande->setImg($nomDuFichier);
+            /* J'add mon image hashée à ma nouvelle annonce */
             $em = $this->getDoctrine()->getManager();
             $demande->setDateparution(new DateTime()); //Règle la date sur la date actuelle
             $em->persist($demande);

@@ -6,8 +6,12 @@
 h1 {
   text-align: center; }
 
-btn-default {
-  background-color: #ffec85; }
+h2 {
+  background-color: #ff9000;
+  color: white; }
+
+.btn-default {
+  background-color: #FEA226; }
 
 #adminbundle_annonce, #adminbundle_demande {
   background-color: #f2ffdf;
@@ -117,5 +121,13 @@ and open the template in the editor.
     Created on : 24 janv. 2017, 13:38:12
     Author     : marvin
 */
+.table-categorie {
+  margin-top: 10px;
+  margin-right: 50px;
+  margin-left: 60px;
+  width: 35%; }
+
+#actcategorie {
+  padding-left: 50px; }
 
 /*# sourceMappingURL=style.css.map */

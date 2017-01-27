@@ -1,18 +1,18 @@
 {% extends 'accueil.html.twig' %}
 
 {% block body %}
-    <h1>Modifier une demande</h1>
+    <h2>Modifier une demande</h2>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+        <input type="submit" value="Modifier" class="btn btn-default"/>
     {{ form_end(edit_form) }}
 
             <a href="{{ path('mesdemandes') }}">
                 <button type="button" class="btn btn-default">Retour à la liste</button></a>
  
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer" class="btn btn-default">
             {{ form_end(delete_form) }}
      
 {% endblock %}

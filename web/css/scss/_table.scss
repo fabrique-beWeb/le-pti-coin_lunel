@@ -1,5 +1,5 @@
 .table-responsive{
-    
+
     .table-title {
         font-family: $main-font;
         background-color: #ff9000;
@@ -26,9 +26,9 @@
             font-family: $main-font;
 
         }
-        
+
         h5 {
-            
+
         }
 
         tbody {
@@ -41,7 +41,7 @@
 
             .right-col{
                 text-align: right;
-                
+
             }
 
             tr:not(.spacer) {
@@ -53,24 +53,41 @@
         .spacer{
             height: 10px;
         }
-    }
+   }
 }
 
 .imgcontainer {
-    position: relative;
-    overflow: hidden;
-    height: 160px;
-    width: 160px;
 
-    img {
-        max-height: 160px;
-        max-width: 160px;
-        position: absolute;
-        top: -9999px;
-        bottom: -9999px;
-        left: -9999px;
-        right: -9999px;
-        margin: auto;
+                position: relative;
 
-    }
-}
+                overflow: hidden;
+
+                height: 160px;
+
+                width: 160px;
+
+
+
+                img {
+
+                    max-height: 160px;
+
+                    max-width: 160px;
+
+                    position: absolute;
+
+                    top: -9999px;
+
+                    bottom: -9999px;
+
+                    left: -9999px;
+
+                    right: -9999px;
+
+                    margin: auto;
+
+
+
+                }
+
+            }
