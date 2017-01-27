@@ -33,10 +33,10 @@
                 <td>
                 
                             <a href="{{ path('showdemande', { 'id': demande.id }) }}">
-                                <button type="button" class="btn btn-default">Afficher</button></a>
+                                <button type="button"  class="btn btn-default">Afficher</button></a>
                         
                             <a href="{{ path('editdemande', { 'id': demande.id }) }}">
-                                <button type="button" class="btn btn-default">Modifier</button></a>
+                                <button type="button"  class="btn btn-default">Modifier</button></a>
                        
                 </td>
             </tr>
@@ -45,7 +45,9 @@
     </table>
 
             <a href="{{ path('newdemande') }}">
-                <button type="button" class="btn btn-default">Créer une nouvelle demande</button></a>
+                <button type="button"  class="btn btn-default">Créer une nouvelle demande</button></a>
+                
+
         </li>
     </ul>
 {% endblock %}

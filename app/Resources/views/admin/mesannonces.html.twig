@@ -2,9 +2,9 @@
 {% block title %}Mes annonces{% endblock %}
 
 {% block body %}
-    <h1>Liste d'annonces</h1>
+    <h2>Liste d'annonces</h2>
 
-    <table>
+   <table class="table">
         <thead>
             <tr>
                 
@@ -13,13 +13,12 @@
                 <th>Description</th>
                 <th>Prix</th>
                 <th>Vendeur</th>
-                <th>Date</th>
+                <th>Dateparution</th>
                 <th>Heure</th>
                 <th>Telephone</th>
                 <th>Categorie</th>
                 <th>Localite</th>
-                <th>Actions</th>
-                
+                <th id="act">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -27,32 +26,31 @@
             <tr>
                 
                 <td>{{ annonce.titre }}</td>
-                <td><img class="image img-responsive" src ="../{{annonce.img}}"/></td>
+                <td>{{ annonce.img }}</td>
                 <td>{{ annonce.description }}</td>
-                <td>{{ annonce.prix }} €</td>
+                <td>{{ annonce.prix }}</td>
                 <td>{{ annonce.vendeur }}</td>
                 <td>{{ annonce.dateparution|date("d/m/y") }}</td>
                 <td>{{annonce.dateparution|date("H:i")}}</td>
                 <td>{{ annonce.telephone }}</td>
                 <td>{{ annonce.categorie }}</td>
                 <td>{{ annonce.localite }}</td>
-                <td>
-                    
+                <td id="glyph">
                     <a href="{{ path('show', { 'id': annonce.id }) }}">
-                        <button type="button" class="btn btn-default">Afficher</button></a>
-                    
+                        <span class="glyphicon glyphicon-pencil afficher">
+                        <p id="aff">Afficher</p></span></a>
                     <a href="{{ path('edit', { 'id': annonce.id }) }}">
-                        <button type="button" class="btn btn-default">Modifier</button></a>
+                        <span class="glyphicon glyphicon-pencil modifier">
+                        <p id="modi">Modifier</p></span></a>
                         
-                    
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-   
     <a href="{{ path('new') }}">
-        <button type="button" class="btn btn-default">Créer une nouvelle annonce</button></a>
+    <button type="button" class="btn btn-default">Créer une nouvelle annonce</button></a>
+    
         
     
 {% endblock %}
