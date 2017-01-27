@@ -9,6 +9,14 @@ h1 {
 btn-default {
   background-color: #ffec85; }
 
+#adminbundle_annonce, #adminbundle_demande {
+  background-color: #f2ffdf;
+  border: solid #888 2px;
+  border-radius: 6px;
+  width: 50%;
+  margin-left: 25%;
+  padding: 12px; }
+
 .table {
   margin-top: 35px;
   margin-right: 25px;
@@ -82,22 +90,23 @@ th {
       text-align: right; }
     .table-responsive .table-visiteur tbody tr:not(.spacer) {
       outline: solid 2px #ffca61; }
-    .table-responsive .table-visiteur tbody .imgcontainer {
-      position: relative;
-      overflow: hidden;
-      height: 160px;
-      width: 160px; }
-      .table-responsive .table-visiteur tbody .imgcontainer img {
-        max-height: 160px;
-        max-width: 160px;
-        position: absolute;
-        top: -9999px;
-        bottom: -9999px;
-        left: -9999px;
-        right: -9999px;
-        margin: auto; }
   .table-responsive .table-visiteur .spacer {
     height: 10px; }
+
+.imgcontainer {
+  position: relative;
+  overflow: hidden;
+  height: 160px;
+  width: 160px; }
+  .imgcontainer img {
+    max-height: 160px;
+    max-width: 160px;
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto; }
 
 /*
 To change this license header, choose License Headers in Project Properties.

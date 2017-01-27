@@ -48,27 +48,29 @@
                 outline: solid 2px #ffca61;
             }
 
-            .imgcontainer {
-                position: relative;
-                overflow: hidden;
-                height: 160px;
-                width: 160px;
 
-                img {
-                    max-height: 160px;
-                    max-width: 160px;
-                    position: absolute;
-                    top: -9999px;
-                    bottom: -9999px;
-                    left: -9999px;
-                    right: -9999px;
-                    margin: auto;
-
-                }
-            }
         }
         .spacer{
             height: 10px;
         }
+    }
+}
+
+.imgcontainer {
+    position: relative;
+    overflow: hidden;
+    height: 160px;
+    width: 160px;
+
+    img {
+        max-height: 160px;
+        max-width: 160px;
+        position: absolute;
+        top: -9999px;
+        bottom: -9999px;
+        left: -9999px;
+        right: -9999px;
+        margin: auto;
+
     }
 }

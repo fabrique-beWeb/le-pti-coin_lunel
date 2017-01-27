@@ -1,14 +1,18 @@
 {% extends 'accueil.html.twig' %}
 
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+
+{% block title %}Créer une demande{% endblock %}
+
 {% block body %}
     <h1>Créer une demande</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input type="submit" value="Créer" class="btn btn-default"/>
     {{ form_end(form) }}
 
-            <a href="{{ path('listedemande') }}">
+            <a href="{{ path('mesdemandes') }}">
                 <button type="button"  class="btn btn-default">Retour à la liste</button></a>
       
 {% endblock %}
