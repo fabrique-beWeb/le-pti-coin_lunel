@@ -31,13 +31,6 @@ class AnnonceController extends Controller {
     }
 
     /**
-     * @Route("/profil", name="profil")
-     */
-    public function getProfil() {
-        return $this->render('admin/profil.html.twig');
-    }
-
-    /**
      * Lists all annonce entities.
      *
      * @Route("/mesannonces", name="mesannonces")

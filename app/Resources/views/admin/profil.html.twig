@@ -2,6 +2,23 @@
 {% block title %}Mon profil{% endblock %}
 
 {% block body %}
-ici mon profil
+{% for profil in monProfil%}
+               
 
+
+   
+                            <p>Avatar : {{profil.avatar}}</p>
+                            <p>Pseudo : {{profil.username}}</p>
+                            <p>Nom : {{profil.nom}}</p>
+                            <p>Prénom : {{profil.prenom}}</p>
+                            <p>Email : {{profil.email}}</p>
+                            <p>Téléphone : {{profil.telephone}}</p>
+                            <p>Code Postale : {{profil.codepostale}}</p>
+                            <p>Ville : {{profil.ville}}</p>
+   
+
+
+
+                
+{% endfor %}
 {% endblock %}

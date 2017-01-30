@@ -23,11 +23,61 @@ class User implements UserInterface
    * @ORM\Column(name="username", type="string", length=255, unique=true)
    */
   private $username;
+  
+  /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=100)
+     */
+    private $prenom;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=100)
+     */
+    private $nom;
+    
+      /**
+     * @var string
+     *
+     * @ORM\Column(name="avatar", type="string", length=100)
+     */
+    private $avatar;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=100)
+     */
+    private $email;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone", type="string", length=100)
+     */
+    private $telephone;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="codepostale", type="string", length=100)
+     */
+    private $codepostale;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ville", type="string", length=100)
+     */
+    private $ville;
 
   /**
    * @ORM\Column(name="password", type="string", length=255)
    */
   private $password;
+  
 
   /**
    * @ORM\Column(name="salt", type="string", length=255)
@@ -145,8 +195,62 @@ class User implements UserInterface
     {
         return $this->roles;
     }
+    function getPrenom() {
+        return $this->prenom;
+    }
 
-  public function eraseCredentials()
+    function getNom() {
+        return $this->nom;
+    }
+
+    function getEmail() {
+        return $this->email;
+    }
+
+    function getTelephone() {
+        return $this->telephone;
+    }
+
+    function getCodepostale() {
+        return $this->codepostale;
+    }
+
+    function getVille() {
+        return $this->ville;
+    }
+
+    function setPrenom($prenom) {
+        $this->prenom = $prenom;
+    }
+
+    function setNom($nom) {
+        $this->nom = $nom;
+    }
+
+    function setEmail($email) {
+        $this->email = $email;
+    }
+
+    function setTelephone($telephone) {
+        $this->telephone = $telephone;
+    }
+
+    function setCodepostale($codepostale) {
+        $this->codepostale = $codepostale;
+    }
+
+    function setVille($ville) {
+        $this->ville = $ville;
+    }
+    function getAvatar() {
+        return $this->avatar;
+    }
+
+    function setAvatar($avatar) {
+        $this->avatar = $avatar;
+    }
+
+      public function eraseCredentials()
   {
   }
   

@@ -30,7 +30,7 @@ class ClientController extends Controller
         $em = $this->getDoctrine()->getManager();
         /* J'initialise ma variable Entity Manager */
 
-        $annonces = $em->getRepository('AdminBundle:Annonce')->findAll();
+        $annonces = $em->getRepository('AdminBundle:Annonce')->findBy(array(), array('dateparution' => 'desc'), null, null);;
         /* L'entity manager va récuperer toutes les annonces dans le repository annonce */
 
         return $this->render('ClientBundle:Default:index.html.twig', array(
