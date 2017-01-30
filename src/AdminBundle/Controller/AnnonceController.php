@@ -9,19 +9,25 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+
+
 
 /**
  * Annonce controller.
- *
+ * @Security("has_role('ROLE_USER')")
  * @Route("admin")
  */
 class AnnonceController extends Controller {
 
     /**
+     * 
      * @Route("/", name="accueil")
      */
     public function getAccueil() {
-        return $this->render('accueil.html.twig');
+
+    return $this->render('accueil.html.twig');
+   
     }
 
     /**

@@ -1,17 +1,17 @@
 security:
   encoders:
     Symfony\Component\Security\Core\User\User: plaintext
+    UserBundle\Entity\User: plaintext
 
   role_hierarchy:
     ROLE_ADMIN:       ROLE_USER
     ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
   providers:
-    in_memory:
-      memory:
-        users:
-          user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-          admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+    main:
+      entity:
+        class:    UserBundle\Entity\User
+        property: username
 
   firewalls:
     dev:
@@ -25,7 +25,7 @@ security:
       anonymous: true
 #anonymous: true accepte les utilisateurs anonymes. 
 #Nous protégerons nos ressources grâce aux rôles.
-      provider:     in_memory
+      provider:     main
 #provider: in_memory est le fournisseur d'utilisateurs pour ce pare-feu. 
 #un pare-feu a besoin de savoir où trouver ses utilisateurs, cela se fait par le biais 
 #de ce paramètre. in_memory correspond au nom du fournisseur défini dans la section 
@@ -34,11 +34,13 @@ security:
           login_path: login
           check_path: login_check
           
+          
       logout:
         path:       logout
         target:     /
           
   access_control:
       - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-      - { path: ^/admin, roles: ROLE_ADMIN}
+      - { path: ^/admin, roles: ROLE_USER}
+      - { path: ^/superadmin, roles: ROLE_ADMIN}
 #      On sécurise toutes les Url qui commencent par /admin.
