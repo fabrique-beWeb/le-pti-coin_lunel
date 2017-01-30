@@ -3,6 +3,7 @@ namespace AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints\File;
+
 /**
  * Annonce
  *
@@ -48,7 +49,8 @@ class Annonce
     /**
      * @var string
      *
-     * @ORM\Column(name="vendeur", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="fk_user", referencedColumnName="id")
      */
     private $vendeur;
    /**

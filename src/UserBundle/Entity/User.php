@@ -12,7 +12,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class User implements UserInterface
 {
-      /**
+  /**
    * @ORM\Column(name="id", type="integer")
    * @ORM\Id
    * @ORM\GeneratedValue(strategy="AUTO")
@@ -149,5 +149,11 @@ class User implements UserInterface
   public function eraseCredentials()
   {
   }
+  
+    public function __toString() 
+    {
+        return $this->getUsername();
+    }
+    
 }
 

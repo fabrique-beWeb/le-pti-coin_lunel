@@ -1,4 +1,5 @@
 {% extends 'accueil.html.twig' %}
+
 {% block title %}Mes annonces{% endblock %}
 
 {% block body %}
@@ -25,10 +26,10 @@
         {% for annonce in annonces %}
             <tr>
                 
-                <td>{{ annonce.titre }}</td>
-                <td><img class="image img-responsive" src ="{{asset('uploads/img/'~annonce.img)}}" alt="{{annonce.img}}"/></td>
+                <td>{{ annonce.titre }}</td>          
+                <td><div class="imgcontainer"><img class="image img-responsive" src ="{{asset('uploads/img/'~annonce.img)}}" alt="{{annonce.img}}"/></div></td>                
                 <td>{{ annonce.description }}</td>
-                <td>{{ annonce.prix }}</td>
+                <td>{{ annonce.prix }} €</td>
                 <td>{{ annonce.vendeur }}</td>
                 <td>{{ annonce.dateparution|date("d/m/y") }}</td>
                 <td>{{ annonce.dateparution|date("H:i")}}</td>

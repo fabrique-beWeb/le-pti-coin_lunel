@@ -96,6 +96,12 @@ class DemandeController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $nomDuFichier = md5(uniqid()) . "." . $demande->getImg()->getClientOriginalExtension();
+            /* Récupère le nom de l'image et le hash, avant d'ajouter l'extension de l'image après le hash */
+            $demande->getImg()->move('uploads/img', $nomDuFichier);
+            /* Je sauvegarde une copie de mon image hashée dans mon dossier web/uploads/img */
+            $demande->setImg($nomDuFichier);
+            /* J'add mon image hashée à ma nouvelle annonce */
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('editdemande', array('id' => $demande->getId()));

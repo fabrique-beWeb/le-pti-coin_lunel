@@ -54,12 +54,13 @@ class Demande
     /**
      * @var string
      *
-     * @ORM\Column(name="demandeur", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="fk_user", referencedColumnName="id")
      */
     private $demandeur;
 
-     /**
-     *@var datetime
+    /**
+     * @var datetime
      * 
      * @ORM\Column(name="dateparution", type="datetime")
      */
