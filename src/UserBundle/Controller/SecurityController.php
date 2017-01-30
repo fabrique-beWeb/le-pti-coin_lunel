@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use UserBundle\Entity\User;
+use UserBundle\Form\UserType;
 
 
 /**
@@ -54,4 +55,26 @@ class SecurityController extends Controller
         $em->flush();
         return $this->redirectToRoute("login");
   }
+  
+  /**
+     * @Route("/inscription", name="inscription")
+     * 
+     */
+    public function getInscription(Request $request) {//Fonction qui permet de s'inscrire en tant que simple utilisateur
+        $em = $this->getDoctrine()->getManager();
+        $user = new User(); //Instance de l'entité User
+
+        $user_form = $this->createForm(UserType::class, $user);
+        if ($request->getMethod() == 'POST') {
+            $user_form->handleRequest($request);  
+            $user->setSalt("");
+            $user->setRoles(array('ROLE_USER'));
+
+            $em->persist($user);
+            $em->flush();
+            return $this->redirectToRoute('accueil');
+        }
+
+        return $this->render('admin/inscription.html.twig', array('form' => $user_form->createView()));
+    }
 }

@@ -31,6 +31,7 @@ security:
 #de ce paramètre. in_memory correspond au nom du fournisseur défini dans la section 
 #providers
       form_login:
+          default_target_path: /admin
           login_path: login
           check_path: login_check
           
