@@ -3,22 +3,65 @@
 
 {% block body %}
 {% for profil in monProfil%}
-               
-
-
+    <h3>Mon Profil</h3>     
+ <table class="table-profil">
+   <tr>
+       <td>Avatar</td>
+       <td>{{profil.avatar}}</td>
+       <td>
+       <button type="button"  class="btn btn-default">Modifier</button>
+       </td>
+   </tr>
    
-                            <p>Avatar : {{profil.avatar}}</p>
-                            <p>Pseudo : {{profil.username}}</p>
-                            <p>Nom : {{profil.nom}}</p>
-                            <p>Prénom : {{profil.prenom}}</p>
-                            <p>Email : {{profil.email}}</p>
-                            <p>Téléphone : {{profil.telephone}}</p>
-                            <p>Code Postale : {{profil.codepostale}}</p>
-                            <p>Ville : {{profil.ville}}</p>
+   <tr>
+   <td>Pseudo</td>
+   <td>{{profil.username}}</td>
+   <td>
+   <button type="button"  class="btn btn-default">Modifier</button>
+   </td>
+   </tr>
    
-
-
-
-                
+   <tr>
+   <td>Nom</td>
+   <td>{{profil.nom}}</td>
+   <td>
+   <button type="button"  class="btn btn-default">Modifier</button>
+   </td>
+   </tr>
+   
+   <tr>
+   <td>Prénom</td>
+   <td>{{profil.prenom}}</td>
+   <td>
+   <button type="button"  class="btn btn-default">Modifier</button>
+   </td>
+   </tr>
+   
+   <tr>
+   <td>Email</td>
+   <td>{{profil.email}}</td>
+   <td>
+   <button type="button"  class="btn btn-default">Modifier</button>
+   </td>
+   </tr>
+   
+   <tr>
+   <td>Code Postale</td>
+   <td>{{profil.codepostale}}</td>
+   <td>
+   <button type="button"  class="btn btn-default">Modifier</button>
+   </td>
+   </tr>
+   
+   <tr>
+   <td>Ville</td>
+   <td>{{profil.ville}}</td>
+   <td>
+   <button type="button"  class="btn btn-default">Modifier</button>
+   </td>
+   </tr><tr>
+   
+</table>
+       
 {% endfor %}
 {% endblock %}

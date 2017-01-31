@@ -26,8 +26,13 @@
                             <td class="right-col">
                                 <h3><strong>{{ annonce.prix }} €</strong></h3>
                                 <h5>{{ annonce.dateparution|date("d/m/y") }}</h5>
+                                
+                                <a href="{{ path('show', { 'id': annonce.id }) }}">
+                                <button type="button" class="btn btn-default">Afficher</button></a>
+                        
                             </td> 
                         </tr>
+                        
                         <tr class="spacer"></tr>
                     {% endfor %}
                 </tbody>

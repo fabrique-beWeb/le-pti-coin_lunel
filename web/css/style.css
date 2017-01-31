@@ -8,10 +8,12 @@ h1 {
 
 h2 {
   background-color: #ff9000;
-  color: white; }
+  color: white;
+  width: 295px; }
 
 .btn-default {
-  background-color: #FEA226; }
+  background-color: #FEA226;
+  margin: 7px; }
 
 #adminbundle_annonce, #adminbundle_demande, #userbundle_user {
   background-color: #f2ffdf;
@@ -53,8 +55,8 @@ th {
   padding-right: 15px;
   padding-left: 15px; }
 
-#create {
-  background-color: red; }
+#glyph {
+  text-align: right; }
 
 .navbar {
   background-color: #ffca61; }
@@ -65,6 +67,13 @@ th {
       color: #000; }
   .navbar .navbar-brand {
     color: #000; }
+
+.table-profil {
+  margin: 15px;
+  width: 35%; }
+
+td {
+  border: 5px; }
 
 .table-responsive .table-title {
   font-family: "Hammersmith+One", sans-serif;
