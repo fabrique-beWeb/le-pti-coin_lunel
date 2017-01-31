@@ -3,6 +3,8 @@
 namespace UserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,13 +19,13 @@ class UserType extends AbstractType
     {
         $builder->add('username')
                 ->add('password')
-                ->add('avatar')
+                ->add('avatar', FileType::class,array('data_class' => null))
                 ->add('prenom')
                 ->add('nom')
                 ->add('email')
                 ->add('telephone')
                 ->add('codepostale')
-                ->add('password')
+                ->add('password', PasswordType::class)
                 ->add('ville')
                 ->add('Envoyer', SubmitType::class);
     }

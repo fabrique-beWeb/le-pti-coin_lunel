@@ -4,6 +4,7 @@ namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints\File;
 /**
  * User
  *
@@ -41,7 +42,8 @@ class User implements UserInterface
       /**
      * @var string
      *
-     * @ORM\Column(name="avatar", type="string", length=100)
+     * @ORM\Column(name="img", type="string", length=255)
+     * @File(mimeTypes={"image/jpeg","image/png"})
      */
     private $avatar;
     

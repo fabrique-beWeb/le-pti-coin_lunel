@@ -54,8 +54,7 @@ class Demande
     /**
      * @var string
      *
-     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
-     * @ORM\JoinColumn(name="fk_user", referencedColumnName="id")
+     * @ORM\Column(name="demandeur", type="string")
      */
     private $demandeur;
 

@@ -47,18 +47,16 @@ class Annonce
      */
     private $prix;
     /**
-     * @var string
+     * @var user
      *
-     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
-     * @ORM\JoinColumn(name="fk_user", referencedColumnName="id")
+     * @ORM\Column(name="user", type="string")
      */
     private $vendeur;
    /**
      *@var datetime
      * 
      * @ORM\Column(name="dateparution", type="datetime")
-     */
-    
+     */    
     private $dateparution;
     /**
      * @var string

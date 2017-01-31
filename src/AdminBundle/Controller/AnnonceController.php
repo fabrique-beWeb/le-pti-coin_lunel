@@ -58,6 +58,7 @@ class AnnonceController extends Controller {
     public function newAction(Request $request) {
         $annonce = new Annonce();
         /* Je crée une fonction nouvelle annonce */
+        
         $form = $this->createForm('AdminBundle\Form\AnnonceType', $annonce);
         /* Je récupère le formulaire stocké dans AnnonceType */
         $form->handleRequest($request);
@@ -73,6 +74,8 @@ class AnnonceController extends Controller {
             /* J'add mon image hashée à ma nouvelle annonce */
             $em = $this->getDoctrine()->getManager();
             /* J'initialise ma variable Entity Manager */
+            $annonce->setVendeur($this->getUser()->getUsername());
+            /* Je régle le nom du vendeur sur l'username de l'utilisateur enregistré */
             $annonce->setDateparution(new DateTime());
             /* Règle la date sur la date actuelle */
             $em->persist($annonce);

@@ -63,10 +63,17 @@ class SecurityController extends Controller
     public function getInscription(Request $request) {//Fonction qui permet de s'inscrire en tant que simple utilisateur
         $em = $this->getDoctrine()->getManager();
         $user = new User(); //Instance de l'entité User
+        
 
         $user_form = $this->createForm(UserType::class, $user);
         if ($request->getMethod() == 'POST') {
-            $user_form->handleRequest($request);  
+            $user_form->handleRequest($request);
+            $nomDuFichier = md5(uniqid()) . "." . $user->getAvatar()->getClientOriginalExtension();
+            /* Récupère le nom de l'image et le hash, avant d'ajouter l'extension de l'image après le hash */
+            $user->getAvatar()->move('uploads/img', $nomDuFichier);
+            /* Je sauvegarde une copie de mon image hashée dans mon dossier web/uploads/img */
+            $user->setAvatar($nomDuFichier);
+            /* J'add mon image hashée à ma nouvelle annonce */
             $user->setSalt("");
             $user->setRoles(array('ROLE_USER'));
 

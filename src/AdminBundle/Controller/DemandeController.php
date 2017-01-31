@@ -54,6 +54,8 @@ class DemandeController extends Controller
             $demande->setImg($nomDuFichier);
             /* J'add mon image hashée à ma nouvelle annonce */
             $em = $this->getDoctrine()->getManager();
+            $demande->setDemandeur($this->getUser()->getUsername());
+            /* Je régle le nom du vendeur sur l'username de l'utilisateur enregistré */
             $demande->setDateparution(new DateTime()); //Règle la date sur la date actuelle
             $em->persist($demande);
             $em->flush($demande);
