@@ -3,6 +3,9 @@
 #ffec85
 #f2ffdf
 #c9f0d6*/
+body {
+  background-color: #e6e6e6; }
+
 h1 {
   text-align: center; }
 
@@ -35,9 +38,6 @@ textarea {
   width: 92%; }
   .table-annonces tbody {
     background-color: #ffec85; }
-
-tbody {
-  background-color: #ffec85; }
 
 th {
   background-color: #ffca61;
