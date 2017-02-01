@@ -17,13 +17,14 @@
                         </div>
                         <div>
                             <ul class="nav navbar-nav">
-
-                                <li><a href="{{ path('mesannonces') }}">Voir mes annonces</a></li>
+                                <li><a href="{{ path('client') }}">Accueil</a></li>
                                 <li><a href="{{ path('new') }}">Déposer une annonce</a></li>
+                                <li><a href="{{ path('newdemande') }}">Déposer une demande</a></li>
+                                <li><a href="{{ path('mesannonces') }}">Voir mes annonces</a></li>
+                                <li><a href="{{ path('mesdemandes') }}">Voir mes demandes</a></li>
                                 {% if is_granted('ROLE_ADMIN') %}
                                 <li><a href="{{ path('listecategorie') }}">Liste des catégories</a></li>
                                 {% endif %}
-                                <li><a href="{{ path('mesdemandes') }}">Liste des demandes</a></li>
                                 <li><a href="{{ path('profil') }}">Mon profil</a></li>
                                 <li><a href="{{ path('logout') }}">Se déconnecter</a></li>
                             </ul>
@@ -35,6 +36,9 @@
                 {%if app.user.username is defined%}
                     <h1>Bienvenue {{app.user.username}}</h1>
                 {% endif %}                 
+            {% endblock %}
+            {% block footer %}
+                <footer></footer>
             {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

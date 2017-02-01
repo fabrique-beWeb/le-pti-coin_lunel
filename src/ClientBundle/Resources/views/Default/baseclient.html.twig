@@ -19,8 +19,9 @@
           </div>
           <div>
             <ul class="nav navbar-nav">
-                <li><a href="{{ path('client') }}">Accueil client</a></li>
+                <li><a href="{{ path('client') }}">Accueil</a></li>
                 <li><a href="{{ path('new') }}">Déposer une annonce</a></li>
+                <li><a href="{{ path('newdemande') }}">Déposer une demande</a></li>
                 {%if app.user.username is defined%}
                 <li><a href="{{ path('accueil') }}">Mon compte</a></li>
                 <li><a href="{{ path('logout') }}">Se déconnecter</a></li>

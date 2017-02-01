@@ -21,6 +21,11 @@ h2 {
   margin-left: 25%;
   padding: 12px; }
 
+textarea {
+  resize: none;
+  max-height: 300px;
+  min-height: 200px; }
+
 .table {
   margin-top: 35px;
   margin-right: 25px;
@@ -111,6 +116,9 @@ th {
     left: -9999px;
     right: -9999px;
     margin: auto; }
+
+.description {
+  white-space: pre-wrap; }
 
 /*
 To change this license header, choose License Headers in Project Properties.
