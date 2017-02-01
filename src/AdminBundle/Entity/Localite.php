@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Localite
  *
- * @ORM\Table(name="localite")
+ * @ORM\Table(name="lepetitcoin_localite")
  * @ORM\Entity(repositoryClass="AdminBundle\Repository\LocaliteRepository")
  */
 class Localite

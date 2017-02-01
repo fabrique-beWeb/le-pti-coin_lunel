@@ -4,47 +4,49 @@
     <h2>Demande</h2>
 
     <table class="table">
-        <tbody>
+        <thead>
             <tr>
                 <th>Id</th>
-                <td>{{ demande.id }}</td>
-            </tr>
-            <tr>
                 <th>Titre</th>
-                <td>{{ demande.titre }}</td>
-            </tr>
-            <tr>
-                <th>Img</th>
-                <td>{{ demande.img }}</td>
-            </tr>
-            <tr>
+                <th>Image</th>
                 <th>Description</th>
-                <td>{{ demande.description }}</td>
-            </tr>
-            <tr>
                 <th>Estimation</th>
-                <td>{{ demande.estimation }}</td>
-            </tr>
-            <tr>
                 <th>Demandeur</th>
-                <td>{{ demande.demandeur }}</td>
-            </tr>
-            <tr>
-                <th>Dateparution</th>
-                <td>{{ demande.dateparution|date("d/m/y") }}</td>
-            </tr>
-            <tr>
+                <th>Date</th>
+                <th>Heures</th>
                 <th>Telephone</th>
+                <th>Categorie</th>
+                <th>Localite</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ demande.id }}</td>
+                <td>{{ demande.titre }}</td>               
+                <td>
+                    <div class ="imgcontainer">
+                        <img class="image img-responsive" src ="{{asset('uploads/img/'~demande.img)}}" alt="{{demande.img}}"/>
+                    </div>
+                </td>
+                <td class="description">{{ demande.description }}</td>
+                <td>{{ demande.estimation }}</td>
+                <td>{{ demande.demandeur }}</td>
+                <td>{{ demande.dateparution|date("d/m/y") }}</td>
+                <td>{{ demande.dateparution|date("h:m")}}</td>
                 <td>{{ demande.telephone }}</td>
+                <td>{{ demande.categorie }}</td>
+                <td>{{ demande.localite }}</td>
             </tr>
         </tbody>
     </table>
 
             <a href="{{ path('mesdemandes') }}">
-                <button type="button" class="btn btn-default">Retour à la liste</button></a>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-repeat"></span> Retour à la liste</button>
+            </a>
  
             <a href="{{ path('editdemande', { 'id': demande.id }) }}">
-                <button type="button" class="btn btn-default">Modifer</button></a>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-wrench modifier"></span> Modifer</button>
+            </a>
     
             {{ form_start(delete_form) }}
                 <input type="submit" value="Supprimer" class="btn btn-default">

@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints\File;
 /**
  * Demande
  *
- * @ORM\Table(name="demande")
+ * @ORM\Table(name="lepetitcoin_demande")
  * @ORM\Entity(repositoryClass="AdminBundle\Repository\DemandeRepository")
  */
 class Demande
@@ -40,7 +40,7 @@ class Demande
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255)
+     * @ORM\Column(name="description", type="string", length=5000)
      */
     private $description;
 

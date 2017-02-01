@@ -7,8 +7,7 @@
 
    <table class="table table-annonces">
         <thead>
-            <tr> 
-                
+            <tr>                
                 <th>Titre</th>
                 <th>Image</th>
                 <th>Description</th>
@@ -24,8 +23,7 @@
         </thead>
         <tbody>
         {% for annonce in annonces %}
-            <tr>
-                
+            <tr>             
                 <td>{{ annonce.titre }}</td>          
                 <td><div class="imgcontainer"><img class="image img-responsive" src ="{{asset('uploads/img/'~annonce.img)}}" alt="{{annonce.img}}"/></div></td>                
                 <td class ="description">{{ annonce.description }}</td>

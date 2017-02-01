@@ -57,8 +57,7 @@ class AnnonceController extends Controller {
      */
     public function newAction(Request $request) {
         $annonce = new Annonce();
-        /* Je crée une fonction nouvelle annonce */
-        
+        /* Je crée une fonction nouvelle annonce */       
         $form = $this->createForm('AdminBundle\Form\AnnonceType', $annonce);
         /* Je récupère le formulaire stocké dans AnnonceType */
         $form->handleRequest($request);
@@ -83,15 +82,14 @@ class AnnonceController extends Controller {
             $em->flush($annonce);
             /* J'envoie mon formulaire dans la base de données */
 
-
             return $this->redirectToRoute('show', array('id' => $annonce->getId()));
             /* Je me redirige sur la page de mon annonce nouvellement créée grace à l'id */
         }
 
         return $this->render('admin/newannonce.html.twig', array(
-                    /* si mon formulaire n'est pas valide (tous les champs pas remplis), message d'erreur */
-                    'annonce' => $annonce,
-                    'form' => $form->createView(),
+            /* si mon formulaire n'est pas valide (tous les champs pas remplis), message d'erreur */
+            'annonce' => $annonce,
+            'form' => $form->createView(),
         ));
     }
 

@@ -47,6 +47,13 @@ class SecurityController extends Controller
       //Nouvel user et ci-dessous tous les réglages
       $user_admin->setRoles(array('ROLE_ADMIN'));
       $user_admin->setUsername("admin");
+      $user_admin->setPrenom("");
+      $user_admin->setNom("");
+      $user_admin->setAvatar("");
+      $user_admin->setEmail("");
+      $user_admin->setTelephone("");
+      $user_admin->setCodepostale("");
+      $user_admin->setVille("");
       $user_admin->setPassword("admin");
       $user_admin->setSalt("");
       

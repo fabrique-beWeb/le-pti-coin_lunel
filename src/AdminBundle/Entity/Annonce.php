@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints\File;
 /**
  * Annonce
  *
- * @ORM\Table(name="annonce")
+ * @ORM\Table(name="lepetitcoin_annonce")
  * @ORM\Entity(repositoryClass="AdminBundle\Repository\AnnonceRepository")
  */
 class Annonce
@@ -37,7 +37,7 @@ class Annonce
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255)
+     * @ORM\Column(name="description", type="string", length=5000)
      */
     private $description;
     /**

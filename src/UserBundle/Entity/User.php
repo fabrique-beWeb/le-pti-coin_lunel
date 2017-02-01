@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints\File;
 /**
  * User
  *
- * @ORM\Table(name="user")
+ * @ORM\Table(name="lepetitcoin_user")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\UserRepository")
  */
 class User implements UserInterface

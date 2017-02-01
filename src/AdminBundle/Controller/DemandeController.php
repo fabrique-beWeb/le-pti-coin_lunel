@@ -44,10 +44,14 @@ class DemandeController extends Controller
     public function newAction(Request $request)
     {
         $demande = new Demande();
+        /* Je crée une fonction nouvelle demande */ 
         $form = $this->createForm('AdminBundle\Form\DemandeType', $demande);
+        /* Je récupère le formulaire stocké dans DemandeType */
         $form->handleRequest($request);
+        /* Je lie mon formulaire avec mes champs */
 
         if ($form->isSubmitted() && $form->isValid()) {
+            /* si mon formulaire est envoyé et qu'il est valide */
             $nomDuFichier = md5(uniqid()) . "." . $demande->getImg()->getClientOriginalExtension();
             /* Récupère le nom de l'image et le hash, avant d'ajouter l'extension de l'image après le hash */
             $demande->getImg()->move('uploads/img', $nomDuFichier);
@@ -55,13 +59,18 @@ class DemandeController extends Controller
             $demande->setImg($nomDuFichier);
             /* J'add mon image hashée à ma nouvelle annonce */
             $em = $this->getDoctrine()->getManager();
+            /* J'initialise ma variable Entity Manager */
             $demande->setDemandeur($this->getUser()->getUsername());
-            /* Je régle le nom du vendeur sur l'username de l'utilisateur enregistré */
-            $demande->setDateparution(new DateTime()); //Règle la date sur la date actuelle
+            /* Je régle le nom du demandeur sur l'username de l'utilisateur enregistré */
+            $demande->setDateparution(new DateTime()); 
+            /* Règle la date sur la date actuelle */
             $em->persist($demande);
+            /* J'enregistre mon formulaire */
             $em->flush($demande);
+            /* J'envoie mon formulaire dans la base de données */
 
             return $this->redirectToRoute('showdemande', array('id' => $demande->getId()));
+            /* Je me redirige sur la page de ma demande nouvellement créée grace à l'id */
         }
 
         return $this->render('demande/newdemande.html.twig', array(
