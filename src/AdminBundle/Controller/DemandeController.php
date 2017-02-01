@@ -9,10 +9,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 /**
  * Demande controller.
- * 
+ * @Security("has_role('ROLE_USER')")
  * @Route("demande")
  */
 class DemandeController extends Controller
