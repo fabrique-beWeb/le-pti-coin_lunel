@@ -9,8 +9,9 @@
         {{ form_widget(edit_form) }}
     {{ form_end(edit_form) }}
 
-    <a href="{{ path('mesdemandes') }}">
-        <button type="button" class="btn btn-default">Retour à la liste</button></a>
+            <a href="{{ path('mesdemandes') }}">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-repeat"></span> Retour à la liste</button>
+            </a>
  
             {{ form_start(delete_form) }}
                 <input type="submit" value="Supprimer" class="btn btn-default">
