@@ -4,10 +4,8 @@
     <h2>Détails de l'annonce</h2>
 
     <table class="table">
-       
         <tbody>
             <tr>
-             
                 <td>{{ annonce.titre }}</td>
                 <td>
                     <div class ="imgcontainer">
@@ -18,7 +16,7 @@
                 <td>{{ annonce.prix }} €</td>
                 <td>{{ annonce.vendeur }}</td>
                 <td>{{ annonce.dateparution|date("d/m/y") }}</td>
-                <td>{{annonce.dateparution|date("h:m")}}</td>
+                <td>{{ annonce.dateparution|date("h:m")}}</td>
                 <td>{{ annonce.telephone }}</td>
                 <td>{{ annonce.categorie }}</td>
                 <td>{{ annonce.localite }}</td>
@@ -26,5 +24,7 @@
         </tbody>
     </table>
 
+    <a href="{{ path('mail',{'mail':annonce.email}) }}">
+        <button type="button" class="btn btn-default">Contact</button></a>
 
 {% endblock %}

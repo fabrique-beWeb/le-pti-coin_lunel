@@ -75,6 +75,7 @@ class AnnonceController extends Controller {
             /* J'initialise ma variable Entity Manager */
             $annonce->setVendeur($this->getUser()->getUsername());
             /* Je régle le nom du vendeur sur l'username de l'utilisateur enregistré */
+            $annonce->setEmail($this->getUser()->getEmail());
             $annonce->setDateparution(new DateTime());
             /* Règle la date sur la date actuelle */
             $em->persist($annonce);

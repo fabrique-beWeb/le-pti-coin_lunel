@@ -18,40 +18,40 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  *
  * @author jonathan-gomez
  */
-class ClientController extends Controller
-{  
-     /**
+class ClientController extends Controller {
+
+    /**
      * Lists all annonce entities.
      *
      * @Route("/", name="client")
      * @Method("GET")
      */
-    public function getAnnonces() 
-    {
+    public function getAnnonces() {
         $em = $this->getDoctrine()->getManager();
         /* J'initialise ma variable Entity Manager */
 
-        $annonces = $em->getRepository('AdminBundle:Annonce')->findBy(array(), array('dateparution' => 'desc'), null, null);;
+        $annonces = $em->getRepository('AdminBundle:Annonce')->findBy(array(), array('dateparution' => 'desc'), null, null);
+        ;
         /* L'entity manager va récuperer toutes les annonces dans le repository annonce */
 
         return $this->render('ClientBundle:Default:index.html.twig', array(
-            'annonces' => $annonces,
-        /* Les annonces sont stockées dans un tableau et affichées dans index.html.twig */ 
+                    'annonces' => $annonces,
+                        /* Les annonces sont stockées dans un tableau et affichées dans index.html.twig */
         ));
     }
-    
-       /**
+
+    /**
      * Vue qui affiche les détails des annonces côté client
      *
      * @Route("/showdetail/{id}", name="showdetail")
      * @Method("GET")
      */
     public function showDetail(Annonce $annonce) {
-       
+
         return $this->render('ClientBundle:Default:detailannonce.html.twig', array(
                     'annonce' => $annonce,
-                    )
+                        )
         );
     }
-    
+
 }

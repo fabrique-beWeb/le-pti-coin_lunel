@@ -6,16 +6,14 @@
     <h2>Modifier une annonce</h2>
 
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
+    {{ form_widget(edit_form) }}
     {{ form_end(edit_form) }}
 
     <a href="{{ path('mesannonces') }}">
         <button type="button" class="btn btn-default">Retour à la liste</button></a>
-    
 
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Supprimer" class="btn btn-default">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    {{ form_start(delete_form) }}
+    <input type="submit" value="Supprimer" class="btn btn-default">
+    {{ form_end(delete_form) }}
+
 {% endblock %}
