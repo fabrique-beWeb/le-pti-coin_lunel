@@ -8,6 +8,7 @@
 
 namespace ClientBundle\Controller;
 
+use AdminBundle\Entity\Annonce;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -37,6 +38,20 @@ class ClientController extends Controller
             'annonces' => $annonces,
         /* Les annonces sont stockées dans un tableau et affichées dans index.html.twig */ 
         ));
+    }
+    
+       /**
+     * Vue qui affiche les détails des annonces côté client
+     *
+     * @Route("/showdetail/{id}", name="showdetail")
+     * @Method("GET")
+     */
+    public function showDetail(Annonce $annonce) {
+       
+        return $this->render('ClientBundle:Default:detailannonce.html.twig', array(
+                    'annonce' => $annonce,
+                    )
+        );
     }
     
 }

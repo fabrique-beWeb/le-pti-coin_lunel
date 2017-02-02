@@ -1,0 +1,30 @@
+{% extends 'ClientBundle:Default:baseclient.html.twig' %}
+{% block title %}Détails de l'annonce{% endblock %}
+{% block body %}
+    <h2>Détails de l'annonce</h2>
+
+    <table class="table">
+       
+        <tbody>
+            <tr>
+             
+                <td>{{ annonce.titre }}</td>
+                <td>
+                    <div class ="imgcontainer">
+                        <img class="image img-responsive" src ="{{asset('uploads/img/'~annonce.img)}}" alt="{{annonce.img}}"/>
+                    </div>
+                </td>
+                <td class="description">{{ annonce.description }}</td>
+                <td>{{ annonce.prix }} €</td>
+                <td>{{ annonce.vendeur }}</td>
+                <td>{{ annonce.dateparution|date("d/m/y") }}</td>
+                <td>{{annonce.dateparution|date("h:m")}}</td>
+                <td>{{ annonce.telephone }}</td>
+                <td>{{ annonce.categorie }}</td>
+                <td>{{ annonce.localite }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "accueil.html.twig"%}
+
+
+
+                <h1>Modifiez votre profil</h1>
+                {% block body %}
+
+                {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+                {{form(form)}}
+
+                <a href="{{path("#")}}"><input type="button" value="Modifier votre mot de Passe"></a>
+{% endblock %}

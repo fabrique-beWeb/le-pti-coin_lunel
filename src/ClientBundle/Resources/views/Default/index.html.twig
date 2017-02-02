@@ -1,43 +1,45 @@
 {% extends 'ClientBundle:Default:baseclient.html.twig' %}
 
 {% block body %}
-        <div class="table-responsive">
-            <h3 class="table-title">Nouvelles annonces</h3>
-            <table class="table table-visiteur"> 
-                <!--table head-->
-                <!--/table head-->
+    <div class="table-responsive">
+        <h3 class="table-title">Nouvelles annonces</h3>
+        <table class="table table-visiteur"> 
+            <!--table head-->
+            <!--/table head-->
 
-                <!--table body-->
+            <!--table body-->
 
-                <tbody>
-                    {% for annonce in annonces %}
-                        <tr>
-                            <td class="left-col">
-                                <div class="imgcontainer">
-                                    <img class="image img-responsive" src="{{asset('uploads/img/'~annonce.img)}}" alt="{{annonce.img}}" />
-                                </div>
-                            </td>
-                                
-                            <td>
-                                <h3><strong>{{ annonce.titre }}</strong></h3>
-                                <h4>{{ annonce.categorie }}</h4>
-                                <h5>{{ annonce.localite }}</h5>
-                            </td>
-                            <td class="right-col">
-                                <h3><strong>{{ annonce.prix }} €</strong></h3>
-                                <h5>{{ annonce.dateparution|date("d/m/y") }}</h5>
-                                
-                                <a href="{{ path('show', { 'id': annonce.id }) }}">
+            <tbody>
+                {% for annonce in annonces %}
+                    <tr>
+                        <td class="left-col">
+                            <div class="imgcontainer">
+                                <a href="{{ path('showdetail', { 'id': annonce.id }) }}">
+                                    <img class="image img-responsive" src="{{asset('uploads/img/'~annonce.img)}}" alt="{{annonce.img}}" /></a>
+                            </div>
+                        </td>
+
+                        <td>
+
+                            <h3><strong>{{ annonce.titre }}</strong></h3>
+                            <h4>{{ annonce.categorie }}</h4>
+                            <h5>{{ annonce.localite }}</h5>
+                        </td>
+                        <td class="right-col">
+                            <h3><strong>{{ annonce.prix }} €</strong></h3>
+                            <h5>{{ annonce.dateparution|date("d/m/y") }}</h5>
+
+                            <a href="{{ path('showdetail', { 'id': annonce.id }) }}">
                                 <button type="button" class="btn btn-default">Afficher</button></a>
-                        
-                            </td> 
-                        </tr>
-                        
-                        <tr class="spacer"></tr>
-                    {% endfor %}
-                </tbody>
-                <!--/table body-->
-            </table>
-        </div>
-            {% endblock %}
+
+                        </td> 
+                    </tr>
+
+                    <tr class="spacer"></tr>
+                {% endfor %}
+            </tbody>
+            <!--/table body-->
+        </table>
+    </div>
+{% endblock %}
 
