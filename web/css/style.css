@@ -18,6 +18,9 @@ h2 {
   background-color: #FEA226;
   margin: 7px; }
 
+th {
+  background-color: #fea226; }
+
 #adminbundle_annonce, #adminbundle_demande, #userbundle_user {
   background-color: #f2ffdf;
   border: solid #888 2px;
@@ -32,16 +35,10 @@ textarea {
   min-height: 200px; }
 
 .table-annonces {
-  margin-top: 35px;
-  margin-right: 25px;
-  margin-left: 45px;
+  margin: 25px;
   width: 92%; }
   .table-annonces tbody {
     background-color: #ffec85; }
-
-th {
-  background-color: #ffca61;
-  margin-bottom: 2px; }
 
 .modifier {
   color: black;
@@ -81,8 +78,8 @@ th {
   .table-profil tbody {
     background-color: #ddd; }
 
-td {
-  border: 5px; }
+.profil-titre {
+  background-color: #fea226; }
 
 .table-responsive .table-title {
   font-family: "Hammersmith+One", sans-serif;
@@ -142,11 +139,17 @@ and open the template in the editor.
     Created on : 24 janv. 2017, 13:38:12
     Author     : marvin
 */
+.table-showannonce {
+  margin: 25px;
+  width: 92%; }
+  .table-showannonce tbody {
+    background-color: #ffec85; }
+
 .table-categorie {
-  margin-top: 10px;
-  margin-right: 50px;
-  margin-left: 60px;
-  width: 35%; }
+  margin: 35px;
+  width: 25%; }
+  .table-categorie tbody {
+    background-color: #ffec85; }
 
 #actcategorie {
   padding-left: 50px; }

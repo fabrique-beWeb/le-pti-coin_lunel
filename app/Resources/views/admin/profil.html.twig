@@ -5,61 +5,88 @@
 {% for profil in monProfil%}
     <h3>Mon Profil</h3>     
  <table class=" table table-profil">
+ <thead>
+      <tr>
+        <th class="profil-titre">Avatar</th>
+      </tr>
+ </thead>
+ <tbody>
+      <tr>
+     <td><div class="imgcontainer"><img class="image img-responsive" src ="{{asset('uploads/img/'~profil.avatar)}}" alt="{{profil.avatar}}"/>
+     </div></td>
+     </tr>
+ </tbody>
+     
+<thead>
+      <tr>
+        <th class="profil-titre">Pseudo</th>
+      </tr>
+ </thead>
+ <tbody>
+      <tr>
+   <td >{{profil.username}}</td>
+      </tr>
+ </tbody>
+    
+<thead>
    <tr>
-       <td>Avatar</td>
-       <td>{{profil.avatar}}</td>
-       <td>
-       <button type="button"  class="btn btn-default">Modifier</button>
-       </td>
+        <th class="profil-titre">Nom</th>
    </tr>
-   
-   <tr>
-   <td>Pseudo</td>
-   <td>{{profil.username}}</td>
-   <td>
-   <button type="button"  class="btn btn-default">Modifier</button>
-   </td>
-   </tr>
-   
-   <tr>
-   <td>Nom</td>
+</thead>
+  
+<tbody>
+      <tr>
+          
    <td>{{profil.nom}}</td>
-   <td>
-   <button type="button"  class="btn btn-default">Modifier</button>
-   </td>
-   </tr>
    
+      </tr>
+  
+</tbody>
+  
+<thead>
+      <tr>
+   <th class="profil-titre">Prénom</th>
+      </tr>
+</thead>
+  
+<tbody>
    <tr>
-   <td>Prénom</td>
    <td>{{profil.prenom}}</td>
-   <td>
-   <button type="button"  class="btn btn-default">Modifier</button>
-   </td>
    </tr>
-   
+</tbody>
+  
+<thead>
    <tr>
-   <td>Email</td>
+   <th class="profil-titre">Email</th>
+   </tr>
+</thead>
+<tbody>
+   <tr>
    <td>{{profil.email}}</td>
-   <td>
-   <button type="button"  class="btn btn-default">Modifier</button>
-   </td>
    </tr>
-   
+</tbody>
+  
+<thead>
    <tr>
-   <td>Code Postale</td>
+   <th class="profil-titre">Code Postale</th>
+   </tr>
+</thead>
+<tbody>
+   <tr>
    <td>{{profil.codepostale}}</td>
-   <td>
-   <button type="button"  class="btn btn-default">Modifier</button>
-   </td>
    </tr>
-   
-   <tr>
-   <td>Ville</td>
+</tbody>
+  
+<thead>
+    <tr>
+   <th class="profil-titre">Ville</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
    <td>{{profil.ville}}</td>
-   <td>
-   <button type="button"  class="btn btn-default">Modifier</button>
-   </td>
-   </tr><tr>
+    </tr>
+</body>
    
 </table>
        

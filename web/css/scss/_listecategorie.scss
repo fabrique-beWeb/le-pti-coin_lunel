@@ -1,10 +1,12 @@
 .table-categorie {
-   margin-top: 10px;
-   margin-right: 50px;
-   margin-left: 60px;
-   width: 35%;
-   
+   margin:35px;
+   width: 25%;
+   tbody {
+   background-color: #ffec85;
+         
+   }
 }
 #actcategorie{
    padding-left: 50px;
+   
 }
