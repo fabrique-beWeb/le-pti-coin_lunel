@@ -45,11 +45,21 @@ Le Pti Coin
 
 #Installation :
 
+* Ouvrir la console et se placer à la racine du dossier et tapez la commande :
 
+* php bin/console doctrine:schema:update --force
+
+* Cela met à jour la base données
 
 * installer les dépendances via composer : 
 
 right-click project -> composer -> install (dev) sous ubuntu via netbeans
+
+* Saisir l'url :
+
+* http://localhost/lepetitcoin/web/app_dev.php/createuser
+
+* Cela créer un administrateur
 
 
 

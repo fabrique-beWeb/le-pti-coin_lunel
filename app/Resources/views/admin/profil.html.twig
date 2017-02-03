@@ -3,8 +3,10 @@
 
 {% block body %}
 {% for profil in monProfil%}
-    <h3>Mon Profil</h3>     
- <table class=" table table-profil">
+    <h3>Mon Profil</h3>
+    
+    <div >
+ <table class="table-profil ">
  <thead>
       <tr>
         <th class="profil-titre">Avatar</th>
@@ -86,9 +88,11 @@
     <tr>
    <td>{{profil.ville}}</td>
     </tr>
-</body>
+</tbody>
    
 </table>
+</div>
+</div>
        
 {% endfor %}
 {% endblock %}
