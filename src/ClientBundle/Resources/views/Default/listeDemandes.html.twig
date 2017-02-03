@@ -1,1 +1,47 @@
-{# empty Twig template #}
+{% extends 'ClientBundle:Default:baseclient.html.twig' %}
+
+{% block body %}
+    <div class="table-responsive">
+        <h3 class="table-title">Nouvelles demandes</h3>
+
+        <table class="table table-visiteur"> 
+            <!--table head-->
+            <!--/table head-->
+
+            <!--table body-->
+
+            <tbody>
+                {% for demande in demandes %}
+                    <tr>
+                        <td class="left-col">
+                            <div class="imgcontainer">
+                                <a href="{{ path('showdetaildemande', { 'id': demande.id }) }}">
+                                    <img class="image img-responsive" src="{{asset('uploads/img/'~demande.img)}}" alt="{{demande.img}}" /></a>
+                            </div>
+                        </td>
+
+                        <td>
+
+                            <h3><strong>{{ demande.titre }}</strong></h3>
+                            <h4>{{ demande.categorie }}</h4>
+                            <h5>{{ demande.localite }}</h5>
+                        </td>
+                        <td class="right-col">
+                            <h3><strong>{{ demande.estimation }} €</strong></h3>
+                            <h5>{{ demande.dateparution|date("d/m/y") }}</h5>
+
+                            <a href="{{ path('showdetaildemande', { 'id': demande.id }) }}">
+                                <button type="button" class="btn btn-default">Afficher</button></a>
+
+                        </td> 
+                    </tr>
+
+                    <tr class="spacer"></tr>
+                {% endfor %}
+            </tbody>
+            <!--/table body-->
+        </table>
+    </div>
+{% block javascripts %}{% endblock %}
+{% endblock %}
+

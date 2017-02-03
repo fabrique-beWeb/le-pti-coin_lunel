@@ -21,6 +21,8 @@
             <ul class="nav navbar-nav">
                
                 <li><a href="{{ path('accueil') }}">Mon compte</a></li>
+                <li><a href="{{ path('client') }}">Offres</a></li>
+                <li><a href="{{ path('visiteurdemande') }}">Demandes</a></li>
                 <li><a href="{{ path('new') }}">Déposer une annonce</a></li>
                 <li><a href="{{ path('newdemande') }}">Déposer une demande</a></li>
                   {%if app.user.username is defined%}

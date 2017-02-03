@@ -1,0 +1,31 @@
+{% extends 'ClientBundle:Default:baseclient.html.twig' %}
+{% block title %}Détails de la demande{% endblock %}
+{% block body %}
+    <h2>Détails demande</h2>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>{{ demande.titre }}</td>
+                <td>
+                    <div class ="imgcontainer">
+                        <img class="image img-responsive" src ="{{asset('uploads/img/'~demande.img)}}" alt="{{demande.img}}"/>
+                    </div>
+                </td>
+                <td class="description">{{ demande.description }}</td>
+                <td>{{ demande.estimation }} €</td>
+                <td>{{ demande.demandeur }}</td>
+                <td>{{ demande.dateparution|date("d/m/y") }}</td>
+                <td>{{ demande.dateparution|date("h:m")}}</td>
+                <td>{{ demande.telephone }}</td>
+                <td>{{ demande.categorie }}</td>
+                <td>{{ demande.localite }}</td>
+            </tr>
+        </tbody>
+    </table>
+            
+ {#   <a href="{{ path('mailform',{'mail':annonce.email}) }}">
+        <button type="button" class="btn btn-default">Contact</button></a>
+#}
+{% endblock %}
+

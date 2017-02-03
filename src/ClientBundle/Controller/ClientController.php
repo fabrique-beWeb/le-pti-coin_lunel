@@ -9,6 +9,7 @@
 namespace ClientBundle\Controller;
 
 use AdminBundle\Entity\Annonce;
+use AdminBundle\Entity\Demande;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -56,6 +57,40 @@ class ClientController extends Controller {
 
         return $this->render('ClientBundle:Default:detailannonce.html.twig', array(
                     'annonce' => $annonce,
+                        )
+        );
+    }
+    
+       /**
+     * Lists all annonce entities.
+     *
+     * @Route("/demandes", name="visiteurdemande")
+     * @Method("GET")
+     */
+    public function getDemandes() {
+        $em = $this->getDoctrine()->getManager();
+        /* J'initialise ma variable Entity Manager */
+
+        $demandes = $em->getRepository('AdminBundle:Demande')->findBy(array(), array('dateparution' => 'desc'), null, null);
+        ;
+        /* L'entity manager va récuperer toutes les annonces dans le repository annonce */
+
+        return $this->render('ClientBundle:Default:listeDemandes.html.twig', array(
+                    'demandes' => $demandes,
+                        /* Les annonces sont stockées dans un tableau et affichées dans index.html.twig */
+        ));
+    }
+    
+    /**
+     * Vue qui affiche les détails des annonces côté client
+     *
+     * @Route("/showdetaildemande/{id}", name="showdetaildemande")
+     * @Method("GET")
+     */
+    public function showDetaildemande(Demande $demande) {
+
+        return $this->render('ClientBundle:Default:detaildemande.html.twig', array(
+                    'demande' => $demande,
                         )
         );
     }
