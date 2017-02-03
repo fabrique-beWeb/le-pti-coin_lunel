@@ -29,6 +29,15 @@ class AnnonceController extends Controller {
     return $this->render('accueil.html.twig');
    
     }
+    /**
+     * 
+     * @Route("/administration", name="administration")
+     */
+    public function getAdministration() {
+
+    return $this->render('admin/administration.html.twig');
+   
+    }
 
     /**
      * Lists all annonce entities.
@@ -159,7 +168,8 @@ class AnnonceController extends Controller {
             $em = $this->getDoctrine()->getManager();
             $em->remove($annonce);
             $em->flush($annonce);
-            /* vérifie que le formulaire est valide, appelle l'entity manager, supprime et envoie la suppression dans la database */
+            /* vérifie que le formulaire est valide, appelle l'entity manager, 
+             * supprime et envoie la suppression dans la database */
         }
 
         return $this->redirectToRoute('mesannonces');

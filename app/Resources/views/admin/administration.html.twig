@@ -1,0 +1,34 @@
+{% extends 'accueil.html.twig' %}
+{% block body %}
+    <h2>Administration</h2>
+    <div class="container-fluid">
+       
+
+    <div class="col-lg-offset-1 col-lg-4 annonce">
+     <h2 class=" col-lg-12">Annonce</h2>
+     <li  ><a href="{{ path('mesannonces') }}">Voir mes annonces</a></li>
+     <br>
+     <li> <a href="{{ path('new') }}">Déposer une annonce</a></li>
+     
+   
+     
+    </div>
+    
+    <div class="col-lg-offset-1 col-lg-4 demande" >
+     <h2 class=" col-lg-12">Demande</h2>
+     <li><a href="{{ path('mesdemandes') }}">Liste des demandes</a></li>
+     <br>
+     <li> <a href="{{ path('newdemande') }}">Déposer une demandes</a></li>
+     
+    </div>
+    
+    <div class="col-lg-offset-4 col-lg-4 categorie" >
+     <h2 class=" col-lg-12">Catégorie</h2>
+     <li><a href="{{ path('listecategorie') }}">Liste des catégories</a></li>
+     <br>
+     <li> <a href="{{ path('new') }}">Liste Utilisateur</a></li>
+     
+    </div>
+  </div>
+ 
+{% endblock %}
