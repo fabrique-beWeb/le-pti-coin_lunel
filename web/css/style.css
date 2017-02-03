@@ -4,7 +4,7 @@
 #f2ffdf
 #c9f0d6*/
 body {
-  background-color: #e6e6e6; }
+  background-color: #F2F8EA; }
 
 h1 {
   text-align: center; }
@@ -34,10 +34,10 @@ textarea {
   max-height: 300px;
   min-height: 200px; }
 
-.table-annonces {
+.table {
   margin: 25px;
   width: 92%; }
-  .table-annonces tbody {
+  .table tbody {
     background-color: #ffec85; }
 
 .modifier {
@@ -72,10 +72,10 @@ textarea {
   .navbar .navbar-brand {
     color: #000; }
 
-.table-profil {
-  margin: 15px;
-  width: 35%; }
-  .table-profil tbody {
+.table {
+  margin: 0 auto;
+  width: 55%; }
+  .table tbody {
     background-color: #ddd; }
 
 .profil-titre {
@@ -91,7 +91,6 @@ textarea {
   outline: solid 2px #ffca61;
   margin-bottom: 10px; }
 .table-responsive .table-visiteur {
-  border-collapse: separate;
   width: 80%;
   margin: auto; }
   .table-responsive .table-visiteur thead {
@@ -154,12 +153,12 @@ and open the template in the editor.
 #actcategorie {
   padding-left: 50px; }
 
-.table-demandes {
+.table-listedemande {
   margin-top: 35px;
   margin-right: 25px;
   margin-left: 45px;
-  width: 95%; }
-  .table-demandes tbody {
+  width: 75%; }
+  .table-listedemande tbody {
     background-color: #ffec85; }
 
 .categorie {
