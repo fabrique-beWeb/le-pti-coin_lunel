@@ -60,8 +60,8 @@ class ClientController extends Controller {
                         )
         );
     }
-    
-       /**
+
+    /**
      * Lists all annonce entities.
      *
      * @Route("/demandes", name="visiteurdemande")
@@ -80,7 +80,7 @@ class ClientController extends Controller {
                         /* Les annonces sont stockées dans un tableau et affichées dans index.html.twig */
         ));
     }
-    
+
     /**
      * Vue qui affiche les détails des annonces côté client
      *
@@ -94,15 +94,6 @@ class ClientController extends Controller {
                         )
         );
     }
-
-//    /**
-//     * @Route("/mail/{mail}", name="mail")
-//     * @Security("has_role('ROLE_USER')")
-//     * @Template("accueil.html.twig")
-//     */
-//    public function sendMail($mail) {
-//        
-//    }
 
     /**
      * 
@@ -119,24 +110,23 @@ class ClientController extends Controller {
         $mailBody = $request->get('form')['body'];
         if ($request->getMethod() == 'POST') {
             $form->handleRequest($request);
-            
 
             $usr = $this->get('security.token_storage')->getToken()->getUser();
             $usr->getUsername();
-            
+
             $message = Swift_Message::newInstance()
                     ->setFrom("lepetitcoin.beweb@gmail.com")
                     ->setTo($mail)
                     ->setSubject("Le Petit Coin : " . $usr . " a répondu à votre annonce!")
                     ->setBody($mailBody)
-                    ;
+            ;
 
             $this->get('mailer')->send($message);
         }
 
-            return $this->render('ClientBundle:Default:mail.html.twig', array(
-                        'form' => $form->createView()
-                            )
-            );
-        }
+        return $this->render('ClientBundle:Default:mail.html.twig', array(
+                    'form' => $form->createView()
+                        )
+        );
     }
+}

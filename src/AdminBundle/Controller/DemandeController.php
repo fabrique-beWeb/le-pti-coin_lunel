@@ -71,6 +71,7 @@ class DemandeController extends Controller
             /* J'initialise ma variable Entity Manager */
             $demande->setDemandeur($this->getUser()->getUsername());
             /* Je régle le nom du demandeur sur l'username de l'utilisateur enregistré */
+            $demande->setEmail($this->getUser()->getEmail());
             $demande->setDateparution(new DateTime()); 
             /* Règle la date sur la date actuelle */
             $em->persist($demande);

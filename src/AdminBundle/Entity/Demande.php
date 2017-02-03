@@ -1,5 +1,5 @@
 <?php
-    
+
 namespace AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -11,8 +11,8 @@ use Symfony\Component\Validator\Constraints\File;
  * @ORM\Table(name="lepetitcoin_demande")
  * @ORM\Entity(repositoryClass="AdminBundle\Repository\DemandeRepository")
  */
-class Demande
-{
+class Demande {
+
     /**
      * @var int
      *
@@ -63,8 +63,14 @@ class Demande
      * 
      * @ORM\Column(name="dateparution", type="datetime")
      */
-    
     private $dateparution;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255)
+     */
+    private $email;
 
     /**
      * @var string
@@ -79,7 +85,6 @@ class Demande
      * @ORM\ManyToOne(targetEntity="Categorie")
      * @ORM\JoinColumn(name="fk_categorie", referencedColumnName="id")
      */
-
     /* Ici on a lié les tables catégorie et localité à notre table annonce */
     private $categorie;
 
@@ -89,17 +94,14 @@ class Demande
      * @ORM\ManyToOne(targetEntity="Localite")
      * @ORM\JoinColumn(name="fk_localite", referencedColumnName="id")
      */
-    
     private $localite;
-
 
     /**
      * Get id
      *
      * @return int
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -110,8 +112,7 @@ class Demande
      *
      * @return Demande
      */
-    public function setTitre($titre)
-    {
+    public function setTitre($titre) {
         $this->titre = $titre;
 
         return $this;
@@ -122,8 +123,7 @@ class Demande
      *
      * @return string
      */
-    public function getTitre()
-    {
+    public function getTitre() {
         return $this->titre;
     }
 
@@ -134,8 +134,7 @@ class Demande
      *
      * @return Demande
      */
-    public function setImg($img)
-    {
+    public function setImg($img) {
         $this->img = $img;
 
         return $this;
@@ -146,8 +145,7 @@ class Demande
      *
      * @return string
      */
-    public function getImg()
-    {
+    public function getImg() {
         return $this->img;
     }
 
@@ -158,8 +156,7 @@ class Demande
      *
      * @return Demande
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
 
         return $this;
@@ -170,8 +167,7 @@ class Demande
      *
      * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -182,8 +178,7 @@ class Demande
      *
      * @return Demande
      */
-    public function setEstimation($estimation)
-    {
+    public function setEstimation($estimation) {
         $this->estimation = $estimation;
 
         return $this;
@@ -194,8 +189,7 @@ class Demande
      *
      * @return string
      */
-    public function getEstimation()
-    {
+    public function getEstimation() {
         return $this->estimation;
     }
 
@@ -206,8 +200,7 @@ class Demande
      *
      * @return Demande
      */
-    public function setDemandeur($demandeur)
-    {
+    public function setDemandeur($demandeur) {
         $this->demandeur = $demandeur;
 
         return $this;
@@ -218,8 +211,7 @@ class Demande
      *
      * @return string
      */
-    public function getDemandeur()
-    {
+    public function getDemandeur() {
         return $this->demandeur;
     }
 
@@ -230,8 +222,7 @@ class Demande
      *
      * @return Demande
      */
-    public function setDateparution($dateparution)
-    {
+    public function setDateparution($dateparution) {
         $this->dateparution = $dateparution;
 
         return $this;
@@ -242,9 +233,29 @@ class Demande
      *
      * @return string
      */
-    public function getDateparution()
-    {
+    public function getDateparution() {
         return $this->dateparution;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return Annonce
+     */
+    public function setEmail($email) {
+        $this->email = $email;
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail() {
+        return $this->email;
     }
 
     /**
@@ -254,8 +265,7 @@ class Demande
      *
      * @return Demande
      */
-    public function setTelephone($telephone)
-    {
+    public function setTelephone($telephone) {
         $this->telephone = $telephone;
 
         return $this;
@@ -266,8 +276,7 @@ class Demande
      *
      * @return string
      */
-    public function getTelephone()
-    {
+    public function getTelephone() {
         return $this->telephone;
     }
 
@@ -278,8 +287,7 @@ class Demande
      *
      * @return Demande
      */
-    public function setCategorie($categorie)
-    {
+    public function setCategorie($categorie) {
         $this->categorie = $categorie;
 
         return $this;
@@ -290,8 +298,7 @@ class Demande
      *
      * @return string
      */
-    public function getCategorie()
-    {
+    public function getCategorie() {
         return $this->categorie;
     }
 
@@ -302,8 +309,7 @@ class Demande
      *
      * @return Demande
      */
-    public function setLocalite($localite)
-    {
+    public function setLocalite($localite) {
         $this->localite = $localite;
 
         return $this;
@@ -314,9 +320,8 @@ class Demande
      *
      * @return string
      */
-    public function getLocalite()
-    {
+    public function getLocalite() {
         return $this->localite;
     }
-}
 
+}
