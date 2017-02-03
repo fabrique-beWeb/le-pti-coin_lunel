@@ -162,4 +162,21 @@ and open the template in the editor.
   .table-demandes tbody {
     background-color: #ffec85; }
 
+.categorie {
+  margin-top: 80px; }
+
+.categorie, .demande, .annonce {
+  background-color: #ffec85;
+  color: black;
+  padding-bottom: 31px; }
+
+.container-fluid {
+  list-style: none; }
+
+.demande, .annonce {
+  margin-top: 30px; }
+
+a {
+  color: black; }
+
 /*# sourceMappingURL=style.css.map */

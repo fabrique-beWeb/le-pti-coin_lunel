@@ -29,8 +29,8 @@ class AnnonceController extends Controller {
     return $this->render('accueil.html.twig');
    
     }
-
-    /**
+    
+     /**
      * Lists all annonce entities.
      *
      * @Route("/mesannonces", name="mesannonces")
@@ -39,9 +39,17 @@ class AnnonceController extends Controller {
     public function getMesannonces() {
         $em = $this->getDoctrine()->getManager();
         /* J'initialise ma variable Entity Manager */
-
-        $annonces = $em->getRepository('AdminBundle:Annonce')->findBy(array(), array('dateparution' => 'desc'), null, null);
-        /* L'entity manager va récuperer toutes les annonces dans le repository annonce et je les classe dans l'ordre du plus récent au plus ancien */
+        
+        //ici je récupère toutes les annonces si je suis admin
+        if ($this->getUser()->getRoles() == array('ROLE_ADMIN')) {
+            $repository = $this->getDoctrine()->getManager()->getRepository('AdminBundle:Annonce');
+            $annonces = $repository->findBy(array(), array('dateparution' => 'desc'), null, null);
+        }
+          //ici je récupère uniquement MES annonces si je suis user
+        if ($this->getUser()->getRoles() == array('ROLE_USER')) {
+            $repository = $this->getDoctrine()->getManager()->getRepository('AdminBundle:Annonce');
+            $annonces = $repository->findBy(array('vendeur' => $this->getUser()->getUsername()), array('dateparution' => 'desc'), null, null);
+        }
 
         return $this->render('admin/mesannonces.html.twig', array(
                     'annonces' => $annonces,
@@ -159,7 +167,8 @@ class AnnonceController extends Controller {
             $em = $this->getDoctrine()->getManager();
             $em->remove($annonce);
             $em->flush($annonce);
-            /* vérifie que le formulaire est valide, appelle l'entity manager, supprime et envoie la suppression dans la database */
+            /* vérifie que le formulaire est valide, appelle l'entity manager, 
+             * supprime et envoie la suppression dans la database */
         }
 
         return $this->redirectToRoute('mesannonces');

@@ -1,8 +1,7 @@
 {% extends 'accueil.html.twig' %}
 
 {% block body %}
-    <h2>Administration</h2>
-  
+    <h2>Liste des catégorie</h2>
     
     <h3>Catégorie</h3>
     <table class="table table-categorie">
@@ -32,11 +31,7 @@
         {% endfor %}
         </tbody>
         </table>
-       </div>
-       </div>
-    </div>
-
-            <a href="{{ path('newcategorie') }}">
-                <button type="button"  class="btn btn-default">Creer une nouvelle catégorie</button></a
-  
+        <a href="{{ path('newcategorie') }}">
+     <button type="button"  class="btn btn-default">Creer une nouvelle catégorie</button></a>
+    
 {% endblock %}
