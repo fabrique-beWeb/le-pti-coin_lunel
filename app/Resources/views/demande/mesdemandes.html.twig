@@ -3,7 +3,7 @@
 {% block title %}Liste des demandes{% endblock %}
 
 {% block body %}
-    <h2>Liste des demandes</h2>
+    <h2>{%if app.user.roles[0] == "ROLE_ADMIN"%}Liste des {%else%}Mes {%endif%}demandes</h2>
 
     <table class="table table-demandes">
         <thead>

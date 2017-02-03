@@ -27,9 +27,18 @@ class DemandeController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
-        $demandes = $em->getRepository('AdminBundle:Demande')->findBy(array(), array('dateparution' => 'desc'), null, null);
-
+        
+         //ici je récupère toutes les demandes si je suis admin
+        if ($this->getUser()->getRoles() == array('ROLE_ADMIN')) {
+            $repository = $this->getDoctrine()->getManager()->getRepository('AdminBundle:Demande');
+            $demandes = $repository->findBy(array(), array('dateparution' => 'desc'), null, null);
+        }
+          //ici je récupère uniquement MES demandes si je suis user
+        if ($this->getUser()->getRoles() == array('ROLE_USER')) {
+            $repository = $this->getDoctrine()->getManager()->getRepository('AdminBundle:Demande');
+            $demandes = $repository->findBy(array('demandeur' => $this->getUser()->getUsername()), array('dateparution' => 'desc'), null, null);
+        }
+        
         return $this->render('demande/mesdemandes.html.twig', array(
             'demandes' => $demandes,
         ));

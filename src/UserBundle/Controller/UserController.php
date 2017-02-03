@@ -45,5 +45,5 @@ class UserController extends Controller {
 
         $this->get('mailer')->send($message);
     }
-
+    
 }
