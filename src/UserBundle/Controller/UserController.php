@@ -31,19 +31,6 @@ class UserController extends Controller {
 
         return $this->render('admin/profil.html.twig', array('monProfil' => $monProfil));
     }
-    
-    /**
-     * @Route("/mail/{mail}", name="mail")
-     * @Template("accueil.html.twig")
-     */
-    public function sendMail() {
-        $message = Swift_Message::newInstance()
-                ->setFrom('lepetitcoin.beweb@gmail.com')
-                ->setTo('paul.maillard34@gmail.com')
-                ->setSubject("Hello")
-                ->setBody("World");
 
-        $this->get('mailer')->send($message);
-    }
 
 }
