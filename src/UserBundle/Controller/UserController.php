@@ -27,6 +27,7 @@ class UserController extends Controller {
      */
     public function getProfil() {//Fonction pour récuperer les informations du profil de l'utilisateur connecté
         $repository = $this->getDoctrine()->getManager()->getRepository('UserBundle:User');
+        //ci-dessous on récupère les utilisateurs par Username
         $monProfil = $repository->findBy(array('username' => $this->getUser()->getUsername()));
 
         return $this->render('admin/profil.html.twig', array('monProfil' => $monProfil));

@@ -1,6 +1,6 @@
 {% extends 'accueil.html.twig' %}
 
-{% block title %}Mes annonces{% endblock %}
+{% block title %}{%if app.user.roles[0] == "ROLE_ADMIN"%}Liste d'{%else%}Mes {%endif%}annonces{% endblock %}
 
  {% block nav %}
                 <nav class="navbar">

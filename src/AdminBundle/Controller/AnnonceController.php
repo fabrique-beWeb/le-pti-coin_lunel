@@ -21,7 +21,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 class AnnonceController extends Controller {
 
     /**
-     * 
+     * Cette fonction affiche l'accueil admin
      * @Route("/", name="accueil")
      */
     public function getAccueil() {
@@ -104,7 +104,7 @@ class AnnonceController extends Controller {
 
     /**
      * Finds and displays a annonce entity.
-     *
+     * J'affiche mes annonces je les récupère par l'ID
      * @Route("/{id}", name="show")
      * @Method("GET")
      */
@@ -120,7 +120,7 @@ class AnnonceController extends Controller {
 
     /**
      * Displays a form to edit an existing annonce entity.
-     *
+     * J'affiche mes annonces je les récupère par l'ID
      * @Route("/{id}/edit", name="edit")
      * @Method({"GET", "POST"})
      */
